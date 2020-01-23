@@ -1,0 +1,156 @@
+{   "definitions": {},   "$schema": "http://json-schema.org/draft-07/schema#",   "$id": "http://example.com/root.json",   "type": "object",   "title": "The Root Schema",   "required": [     "saksbehandler",     "enhet",
+     "orgNummer",
+     "navKontorNavn",
+     "tiltakNavn",
+     "fodselsnr",
+     "fornavn",
+     "etternavn",
+     "kontoNummer",
+     "fraDato",
+     "tilDato",
+     "totaltTilskuddbelop",
+     "arbgiverNavn",
+     "tilsagnDato"
+   ],
+   "properties": {
+     "saksbehandler": {
+       "$id": "#/properties/saksbehandler",
+       "type": "string",
+       "title": "The Saksbehandler Schema",
+       "default": "",
+       "examples": [
+         "Vibeke Veileder"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "enhet": {
+       "$id": "#/properties/enhet",
+       "type": "string",
+       "title": "The Enhet Schema",
+       "default": "",
+       "examples": [
+         "Endrer avdeling"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "orgNummer": {
+       "$id": "#/properties/orgNummer",
+       "type": "string",
+       "title": "The Orgnummer Schema",
+       "default": "",
+       "examples": [
+         "920130283"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "navKontorNavn": {
+       "$id": "#/properties/navKontorNavn",
+       "type": "string",
+       "title": "The Navkontornavn Schema",
+       "default": "",
+       "examples": [
+         "NAV Skedsmo"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "tiltakNavn": {
+       "$id": "#/properties/tiltakNavn",
+       "type": "string",
+       "title": "The Tiltaknavn Schema",
+       "default": "",
+       "examples": [
+         "Midlertidig lønnstilskudd"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "fodselsnr": {
+       "$id": "#/properties/fodselsnr",
+       "type": "string",
+       "title": "The Fodselsnr Schema",
+       "default": "",
+       "examples": [
+         "0101011990"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "fornavn": {
+       "$id": "#/properties/fornavn",
+       "type": "string",
+       "title": "The Fornavn Schema",
+       "default": "",
+       "examples": [
+         "Ola"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "etternavn": {
+       "$id": "#/properties/etternavn",
+       "type": "string",
+       "title": "The Etternavn Schema",
+       "default": "",
+       "examples": [
+         "Nordmann"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "kontoNummer": {
+       "$id": "#/properties/kontoNummer",
+       "type": "string",
+       "title": "The Kontonummer Schema",
+       "default": "",
+       "examples": [
+         "32600596984"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "fraDato": {
+       "$id": "#/properties/fraDato",
+       "type": "string",
+       "title": "The Fradato Schema",
+       "default": "",
+       "examples": [
+         "2019-09-14"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "tilDato": {
+       "$id": "#/properties/tilDato",
+       "type": "string",
+       "title": "The Tildato Schema",
+       "default": "",
+       "examples": [
+         "2019-12-31"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "totaltTilskuddbelop": {
+       "$id": "#/properties/totaltTilskuddbelop",
+       "type": "integer",
+       "title": "The Totalttilskuddbelop Schema",
+       "default": 0,
+       "examples": [
+         59300
+       ]
+     },
+     "arbgiverNavn": {
+       "$id": "#/properties/arbgiverNavn",
+       "type": "string",
+       "title": "The Arbgivernavn Schema",
+       "default": "",
+       "examples": [
+         "TREIDER KOMPETANSE AS"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "tilsagnDato": {
+       "$id": "#/properties/tilsagnDato",
+       "type": "string",
+       "title": "The Tilsagndato Schema",
+       "default": "",
+       "examples": [
+         "2019-09-25"
+       ],
+       "pattern": "^(.*)$"
+     }
+   }
+ }

@@ -1,5 +1,5 @@
 # k9-dokgen
-Brevmaler for team tag.
+Brevmaler for team k9saksbehandlign.
 
 
 ## Importer maler i prosjekt
