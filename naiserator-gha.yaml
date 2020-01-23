@@ -2,13 +2,13 @@ apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
   labels:
-    team: teamtag
+    team: k9saksbehandling
   name: k9-dokgen
   namespace: default
 spec:
   image: {{ image }}
   port: 8080
-  team: teamtag
+  team: k9saksbehandling
   liveness:
     path: /actuator/info
     initialDelay: 20
@@ -44,4 +44,4 @@ spec:
     - name: APP_VERSION
       value: {{ image }}
     - name: APP_TEAM
-      value: teamtag
+      value: k9saksbehandling
