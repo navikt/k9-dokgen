@@ -1,0 +1,103 @@
+/* WARNING: Uses CSS 2.1 */
+
+* {
+    font-family: "Source Sans Pro", sans-serif !important;
+    color: #3E3832;
+    border-spacing: 0;
+}
+
+html {
+    height:100%;
+}
+
+body{
+    padding: 10mm;
+    margin: 0;
+    position: relative;
+}
+
+#content {
+    margin: 1rem;
+}
+
+#header {
+    margin-bottom: 0mm;
+}
+
+#footer {
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25mm;
+}
+
+#nav_logo {
+    width: 15mm;
+    height: 9.1mm;
+    margin: auto;
+    padding: 0 0 10mm 0;
+    position: absolute;
+    right: 10mm;
+}
+
+.block {
+    width: 100%;
+    margin-top: 0;
+}
+
+.inline {
+    display: inline-block;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0mm 0 10mm 0;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 3mm 0 1.5mm 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 10mm 0 1.5mm 0;
+}
+
+p {
+    font-size: 14px;
+    margin: 0.5mm 0 2mm 0;
+}
+
+tr {
+    font-size: 14px;
+}
+
+/*
+td {
+    border: 1px solid black;
+}
+*/
+
+ table {
+    width: 100%;
+}
+
+.td01 {
+  width: 110px;
+  font-size: 12px;
+}
+
+.td02 {
+  width: 150px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.new_page {
+    page-break-before: always;
+}
