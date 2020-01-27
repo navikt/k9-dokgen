@@ -1,44 +1,45 @@
-name: Verify and test 
+name: Verify and test
 
 on:
   push:
     branches:
       - '*'
-      - '!master'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   CLUSTER: dev-fss
   IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
-  
+
 jobs:
   kompiler:
     runs-on: ubuntu-latest
     steps:
-    
+
       - name: Sjekk ut kode
         uses: actions/checkout@v2
-     
+
       - name: Test med up.sh
         run: chmod +x *.sh && ./up.sh
 
       - name: Hent tag
         run: echo "::set-env name=TAG::$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)"
-        
+
       - name: Lag image-navn
         run: echo "::set-env name=IMAGE::$IMAGE_BASE:$TAG"
-        
-      - name: Bygg, tag og push Docker image  
-        run: |
-          docker build --tag ${IMAGE} .
-          echo  ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
-          docker push ${IMAGE_BASE}
 
-      - name: Opprett deployment issue
-        if: success()
-        uses: maxkomarychev/oction-create-issue@v0.7.1
-        id: createdeployissue
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: Bygg av ${{ env.TAG }}
-          body: Kommenter med <b>/deploy ${{ env.TAG }}</b> for å deploye til dev-fss.
+      - name: Bygg, tag og push Docker image
+        run: |
+          docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest .
+          echo  ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
+
+          docker push ${IMAGE_BASE}:latest
+          docker push ${IMAGE}
+
+#      - name: Opprett deployment issue
+#        if: success()
+#        uses: maxkomarychev/oction-create-issue@v0.7.1
+#        id: createdeployissue
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          title: Bygg av ${{ env.TAG }}
+#          body: Kommenter med <b>/deploy ${{ env.TAG }}</b> for å deploye til dev-fss.
