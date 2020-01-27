@@ -1,0 +1,30 @@
+Til {{navnBruker}}
+
+<br/>
+
+### SLIK HAR VI BEREGNET PLEIEPENGENE DINE
+Du får en dagsats på brutto {{dagsats}} kroner.
+
+Vi viser til vårt vedtak datert {{vedtaksDato}}.
+
+### BEGRUNNELSE
+NAV beregner pleiepenger etter de samme bestemmelsene som gjelder for sykepenger. Dette går fram av folketrygdloven § 9-15.
+
+Vi fastsetter pleiepengegrunnlaget ut fra gjennomsnittet av inntekten din de tre siste hele kalendermånedene før du var borte fra arbeid for å passe barnet ditt, og omregner denne til årsinntekt. Dette gjelder også hvis du har skiftende arbeidstid eller inntekt. Hvis denne årsinntekten avviker mer enn 25 prosent fra inntekten du har hatt de siste 12 månedene, skal pleiepengegrunnlaget fastsettes ved skjønn.
+
+{{> inntektsrapportering }}
+
+{{#if inntektErOverSeksGangerGrunnbeløp}}
+Pleiepengegrunnlaget kan ikke være høyere enn seks ganger grunnbeløpet. Du har inntekt som overstiger dette. Derfor har vi redusert grunnlaget ditt. Dette går fram av folketrygdloven § 8-10.
+{{/if}}
+
+
+{{#if fastsattEtterInntektOppgittAvArbeidsgiver}}
+* Vi har fastsatt pleiepengegrunnlaget ditt etter inntekten arbeidsgiveren din har oppgitt til oss.
+* Vi har fastsatt pleiepengegrunnlaget ditt etter hovedregelen.
+{{/if}}
+
+Vedtaket er gjort etter folketrygdloven §§ 9-15 og 8-28 til 8-30.
+
+
+{{> footer }}

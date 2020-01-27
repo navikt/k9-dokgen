@@ -1,0 +1,100 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "saksbehandler",
+    "enhet",
+    "navnBruker",
+    "dagsats",
+    "vedtaksDato",
+    "inntektAOrdningKronebeløp",
+    "inntektsmeldingKronebeløp",
+    "inntektErOverSeksGangerGrunnbeløp",
+    "fastsattEtterInntektOppgittAvArbeidsgiver"
+  ],
+  "properties": {
+    "saksbehandler": {
+      "$id": "#/properties/saksbehandler",
+      "type": "string",
+      "title": "The Saksbehandler Schema",
+      "default": "",
+      "examples": [
+        "Vibeke Veileder"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "enhet": {
+      "$id": "#/properties/enhet",
+      "type": "string",
+      "title": "The Enhet Schema",
+      "default": "",
+      "examples": [
+        "Endrer avdeling"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "navnBruker": {
+      "$id": "#/properties/orgNummer",
+      "type": "string",
+      "title": "The Orgnummer Schema",
+      "default": "",
+      "examples": [
+        "920130283"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "dagsats": {
+      "$id": "#/properties/tiltakNavn",
+      "type": "number",
+      "title": "The Tiltaknavn Schema",
+      "default": "",
+      "examples": [
+        "Midlertidig lønnstilskudd"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "inntektAOrdningKronebeløp": {
+      "$id": "#/properties/tiltakNavn",
+      "type": "number",
+      "title": "The Tiltaknavn Schema",
+      "default": "",
+      "examples": [
+        "Midlertidig lønnstilskudd"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "inntektsmeldingKronebeløp": {
+      "$id": "#/properties/fodselsnr",
+      "type": "number",
+      "title": "The Fodselsnr Schema",
+      "default": "",
+      "examples": [
+        "0101011990"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "inntektErOverSeksGangerGrunnbeløp": {
+      "$id": "#/properties/fornavn",
+      "type": "boolean",
+      "title": "The Fornavn Schema",
+      "default": "",
+      "examples": [
+        "Ola"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "fastsattEtterInntektOppgittAvArbeidsgiver": {
+      "$id": "#/properties/etternavn",
+      "type": "boolean",
+      "title": "The Etternavn Schema",
+      "default": "",
+      "examples": [
+        "Nordmann"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
