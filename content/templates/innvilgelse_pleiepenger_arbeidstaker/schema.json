@@ -7,94 +7,65 @@
   "required": [
     "saksbehandler",
     "enhet",
-    "navnBruker",
+    "returAdresse",
+    "barnNavn",
+    "barnFødselsdato",
+    "søkerNavn",
+    "søkerFødselsdato",
+    "søkerAdresse",
     "dagsats",
     "vedtaksDato",
-    "inntektAOrdningKronebeløp",
-    "inntektsmeldingKronebeløp",
-    "inntektErOverSeksGangerGrunnbeløp",
-    "fastsattEtterInntektOppgittAvArbeidsgiver"
+    "utbetalingStartDato",
+    "utbetalingSluttDato",
+    "innvilgetStartDato",
+    "innvilgetSluttDato",
+    "innvilgetPleiepengerProsent"
   ],
   "properties": {
     "saksbehandler": {
-      "$id": "#/properties/saksbehandler",
-      "type": "string",
-      "title": "The Saksbehandler Schema",
-      "default": "",
-      "examples": [
-        "Vibeke Veileder"
-      ],
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "enhet": {
-      "$id": "#/properties/enhet",
-      "type": "string",
-      "title": "The Enhet Schema",
-      "default": "",
-      "examples": [
-        "Endrer avdeling"
-      ],
-      "pattern": "^(.*)$"
+      "type": "string"
     },
-    "navnBruker": {
-      "$id": "#/properties/orgNummer",
-      "type": "string",
-      "title": "The Orgnummer Schema",
-      "default": "",
-      "examples": [
-        "920130283"
-      ],
-      "pattern": "^(.*)$"
+    "returAdresse": {
+      "type": "string"
+    },
+    "barnNavn": {
+      "type": "string"
+    },
+    "barnFødselsdato": {
+      "type": "string"
+    },
+    "søkerNavn": {
+      "type": "string"
+    },
+    "søkerFødselsdato": {
+      "type": "string"
+    },
+    "søkerAdresse": {
+      "type": "string"
     },
     "dagsats": {
-      "$id": "#/properties/tiltakNavn",
-      "type": "number",
-      "title": "The Tiltaknavn Schema",
-      "default": "",
-      "examples": [
-        "Midlertidig lønnstilskudd"
-      ],
-      "pattern": "^(.*)$"
+      "type": "number"
     },
-    "inntektAOrdningKronebeløp": {
-      "$id": "#/properties/tiltakNavn",
-      "type": "number",
-      "title": "The Tiltaknavn Schema",
-      "default": "",
-      "examples": [
-        "Midlertidig lønnstilskudd"
-      ],
-      "pattern": "^(.*)$"
+    "vedtaksDato": {
+      "type": "string"
     },
-    "inntektsmeldingKronebeløp": {
-      "$id": "#/properties/fodselsnr",
-      "type": "number",
-      "title": "The Fodselsnr Schema",
-      "default": "",
-      "examples": [
-        "0101011990"
-      ],
-      "pattern": "^(.*)$"
+    "utbetalingStartDato": {
+      "type": "string"
     },
-    "inntektErOverSeksGangerGrunnbeløp": {
-      "$id": "#/properties/fornavn",
-      "type": "boolean",
-      "title": "The Fornavn Schema",
-      "default": "",
-      "examples": [
-        "Ola"
-      ],
-      "pattern": "^(.*)$"
+    "utbetalingSluttDato": {
+      "type": "string"
     },
-    "fastsattEtterInntektOppgittAvArbeidsgiver": {
-      "$id": "#/properties/etternavn",
-      "type": "boolean",
-      "title": "The Etternavn Schema",
-      "default": "",
-      "examples": [
-        "Nordmann"
-      ],
-      "pattern": "^(.*)$"
+    "innvilgetStartDato": {
+      "type": "string"
+    },
+    "innvilgetSluttDato": {
+      "type": "string"
+    },
+    "innvilgetPleiepengerProsent": {
+      "type": "number"
     }
   }
 }
