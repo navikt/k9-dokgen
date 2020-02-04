@@ -1,11 +1,17 @@
 {
   "saksbehandler": "Vibeke Veileder",
   "enhet": "ARENDAL",
-  "navnBruker": "Ola Nordmann",
-  "dagsats": 3510,
+  "returAdresse": "NAV, Oslo",
+  "barnNavn": "Barn Barnesen",
+  "barnFødselsdato": "2019-11-02",
+  "søkerNavn": "Ola Nordmann",
+  "søkerFødselsdato": "1919-11-02",
+  "søkerAdresse": "Bostedsgaten 12A, 0165, Oslo",
+  "dagsats": 510,
   "vedtaksDato": "2019-09-25",
-  "inntektAOrdningKronebeløp": 46500,
-  "inntektsmeldingKronebeløp": 45000,
-  "inntektErOverSeksGangerGrunnbeløp": false,
-  "fastsattEtterInntektOppgittAvArbeidsgiver": true
+  "utbetalingStartDato": "2020-01-25",
+  "utbetalingSluttDato": "2020-10-25",
+  "innvilgetStartDato": "2020-01-25",
+  "innvilgetSluttDato": "2020-10-25",
+  "innvilgetPleiepengerProsent": 0.66
 }

@@ -35,6 +35,14 @@ jobs:
           docker push ${IMAGE_BASE}:latest
           docker push ${IMAGE}
 
+      - name: Deploy k9-dokgen-kontrakt artifact
+        run: |
+          ./collect-contracts.sh
+          mvn deploy -e --batch-mode --settings ./.m2/settings.xml -Dmaven.wagon.http.pool=false --file build -Dchangelist= -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
+        env:
+          GITHUB_USERNAME: x-access-token
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+
 #      - name: Opprett deployment issue
 #        if: success()
 #        uses: maxkomarychev/oction-create-issue@v0.7.1
