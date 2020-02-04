@@ -29,7 +29,7 @@
       "type": "string"
     },
     "returAdresse": {
-      "type": "string"
+      "type": "object"
     },
     "barnNavn": {
       "type": "string"
