@@ -10,17 +10,17 @@
 
     <properties>
         <revision>0.0.1</revision>
+        <sha1>-local</sha1>
     </properties>
 
     <build>
-        <sourceDirectory>${basedir}/tmp</sourceDirectory>
+        <outputDirectory>${basedir}/tmp</outputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
+                <artifactId>maven-jar-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>attach-sources</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
