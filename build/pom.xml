@@ -8,6 +8,10 @@
 
     <artifactId>k9-dokgen-kontrakt</artifactId>
 
+    <properties>
+        <revision>0.0.1</revision>
+    </properties>
+
     <build>
         <sourceDirectory>${basedir}/tmp</sourceDirectory>
         <plugins>
