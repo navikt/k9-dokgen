@@ -2,7 +2,7 @@ version: '3.7'
 services:
   dokgen:
     build: .
-    container_name: dokgen-dev
+    container_name: dokgen_dev
     image: navikt/dokgen:latest
     ports:
       - "5913:8080"
