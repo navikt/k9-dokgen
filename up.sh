@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-docker-compose -p sut up -d --build
+docker-compose -p dokgen-dev up -d --build
 
 export HEALTHCHECK_URL=localhost:8080/actuator/health
-export CONTAINER=sut_dokgen_1
+export CONTAINER=dokgen-dev
 attempt_counter=0
 max_attempts=15
 printf 'Waiting for server         '
