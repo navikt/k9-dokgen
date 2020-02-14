@@ -5,9 +5,7 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "saksbehandler",
-    "enhet",
-    "returAdresse",
+    "navFellesBrevData",
     "barnNavn",
     "barnFødselsdato",
     "søkerNavn",
@@ -22,13 +20,7 @@
     "innvilgetPleiepengerProsent"
   ],
   "properties": {
-    "saksbehandler": {
-      "type": "string"
-    },
-    "enhet": {
-      "type": "string"
-    },
-    "returAdresse": {
+    "navFellesBrevData": {
       "type": "object"
     },
     "barnNavn": {

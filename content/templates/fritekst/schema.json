@@ -5,23 +5,36 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "saksbehandler",
-    "enhet",
-    "returAdresse",
-    "fritekst"
+    "navFelles"
   ],
   "properties": {
-    "saksbehandler": {
-      "type": "string"
-    },
-    "enhet": {
-      "type": "string"
-    },
-    "returAdresse": {
-      "type": "object"
-    },
-    "fritekst": {
-      "type": "string"
+    "navFelles": {
+      "required": [
+        "saksbehandler",
+        "enhet",
+        "returAdresse",
+        "søkerNavn"
+      ],
+      "properties": {
+        "saksbehandler": {
+          "type": "string"
+        },
+        "enhet": {
+          "type": "string"
+        },
+        "returAdresse": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "søkerNavn": {
+          "type": "string"
+        },
+        "fritekst": {
+          "type": "string"
+        }
+      }
     }
   }
 }
