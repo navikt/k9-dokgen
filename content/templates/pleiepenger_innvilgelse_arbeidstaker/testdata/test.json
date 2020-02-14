@@ -1,10 +1,14 @@
 {
-  "saksbehandler": "Vibeke Veileder",
-  "enhet": "ARENDAL",
-  "returAdresse": "NAV, Oslo",
+  "navFelles": {
+    "saksbehandler": "Vibeke Veileder",
+    "enhet": "ARENDAL",
+    "returAdresse": "NAV, Oslo",
+    "tittel": "GENERELT FRITEKSTBREV",
+    "søkerNavn": "Silje Søker",
+    "fritekst": "Dette er en kort fritekst som også kan være lang"
+  },
   "barnNavn": "Barn Barnesen",
   "barnFødselsdato": "2019-11-02",
-  "søkerNavn": "Ola Nordmann",
   "søkerFødselsdato": "1919-11-02",
   "søkerAdresse": "Bostedsgaten 12A, 0165, Oslo",
   "dagsats": 510,
