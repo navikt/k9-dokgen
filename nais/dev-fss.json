@@ -1,3 +1,9 @@
 {
-    "ingress": "https://k9-dokgen.nais.preprod.local"
+  "cluster": "preprod",
+  "serviceuserkv": "/serviceuser/data/dev/srvk9dokgen",
+  "namespace": "q1",
+  "ingress": ["https://k9-dokgen.nais.preprod.local"],
+	"env": {
+
+  }
 }
