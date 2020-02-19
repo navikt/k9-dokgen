@@ -1,14 +1,14 @@
-name: Verify and test
+name: Build and deploy
 
 on:
   push:
     branches:
-      - '*'
+      - master
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  CLUSTER: dev-fss
   IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
+  CLUSTER: dev-fss
 
 jobs:
   kompiler:
@@ -41,13 +41,27 @@ jobs:
           mvn deploy -e --settings ./.m2/settings.xml --file build -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
         env:
           GITHUB_USERNAME: x-access-token
-          GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_ACCESS_TOKEN }}
 
-#      - name: Opprett deployment issue
-#        if: success()
-#        uses: maxkomarychev/oction-create-issue@v0.7.1
-#        id: createdeployissue
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          title: Bygg av ${{ env.TAG }}
-#          body: Kommenter med <b>/deploy ${{ env.TAG }}</b> for å deploye til dev-fss.
+      - name: Opprett deployment issue
+        if: success()
+        uses: maxkomarychev/oction-create-issue@v0.7.1
+        id: createdeployissue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Bygg av ${{ env.TAG }}
+          labels: deployment
+          body: |
+            Kommenter med <b>/promote ${{ env.TAG }} env namespace</b>, hvor <b>env</b> er et gyldig clusternavn og <b>namespace</b> et eksisterende namespace i det clusteret.
+            <table>
+            <tr><th>Cluster</th><th>Namespace</th></tr>
+            <tr><td>dev-fss</td><td>q1</td></tr>
+            <tr><td>prod-fss</td><td>default</td></tr>
+            </table>
+      - name: Trigg deploy til dev-fss
+        if: success()
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          issue-number: ${{ steps.createdeployissue.outputs.number }}
+          body: /promote ${{ env.TAG }} dev-fss q1
