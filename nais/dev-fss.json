@@ -2,8 +2,10 @@
   "cluster": "preprod",
   "serviceuserkv": "/serviceuser/data/dev/srvk9dokgen",
   "namespace": "q1",
-  "ingress": "https://k9-dokgen.nais.preprod.local",
+  "ingresses": [
+    "https://k9-dokgen.nais.preprod.local"
+  ],
 	"env": {
-
-  }
+      "LOADBALANCER_FQDN": "fpformidling-q1.nais.preprod.local"
+    }
 }
