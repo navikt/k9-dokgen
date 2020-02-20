@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
   CLUSTER: dev-fss
   IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
 
@@ -41,14 +41,14 @@ jobs:
           mvn deploy -e --settings ./.m2/settings.xml --file build -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
         env:
           GITHUB_USERNAME: x-access-token
-          GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_ACCESS_TOKEN }}
 
       - name: Opprett deployment issue
         if: success()
         uses: maxkomarychev/oction-create-issue@v0.7.1
         id: createdeployissue
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           title: Bygg av ${{ env.TAG }}
           labels: deployment
           body: |
