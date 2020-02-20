@@ -1,14 +1,14 @@
-name: Verify and test
+name: Build and deploy
 
 on:
   push:
     branches:
-      - '*'
+      - master
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  CLUSTER: dev-fss
   IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
+  CLUSTER: dev-fss
 
 jobs:
   kompiler:
