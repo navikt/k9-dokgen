@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [promote-command]
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-sak
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
         if: success()
         uses: actions/github-script@0.4.0
         with:
-          github-token: ${{secrets.GITHUB_ACCESS_TOKEN}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const issue = { owner: context.issue.owner,
                             repo: context.issue.repo,
