@@ -27,13 +27,6 @@ spec:
     requests:
       cpu: 200m
       memory: 256Mi
-  vault:
-    enabled: true
-    paths:
-      - mountPath: /var/run/secrets/nais.io/vault
-        kvPath: /kv/{{cluster}}/fss/k9-dokgen/{{namespace}}
-      - mountPath: /var/run/secrets/nais.io/serviceuser
-        kvPath: {{serviceuserkv}}
   prometheus:
     enabled: true
     path: /internal/prometheus

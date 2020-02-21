@@ -1,6 +1,5 @@
 {
   "cluster": "preprod",
-  "serviceuserkv": "/serviceuser/data/dev/srvk9dokgen",
   "namespace": "q1",
   "minReplicas": "1",
   "maxReplicas": "2",
