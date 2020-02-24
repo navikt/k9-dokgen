@@ -6,7 +6,7 @@ export CONTAINER=dokgen_dev
 attempt_counter=0
 max_attempts=15
 printf 'Waiting for server         '
-until $(docker run --rm --network container:$CONTAINER appropriate/curl --output /dev/null --silent --head --fail $HEALTHCHECK_URL); do
+until $(docker run --rm --network container:$CONTAINER appropriate/curl -4 --retry 4 --retry-delay 3 --output /dev/null --silent --head --fail $HEALTHCHECK_URL); do
     if [ ${attempt_counter} -eq ${max_attempts} ];then
       echo "Max attempts reached, failing"
       exit 1
