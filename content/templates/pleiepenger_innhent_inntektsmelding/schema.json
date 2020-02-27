@@ -5,13 +5,24 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "soknadDato"
+    "søkerFødselsnummer",
+    "barnNavn",
+    "søknadDato"
   ],
   "properties": {
     "navFelles": {
       "type": "object"
     },
-    "soknadDato": {
+    "søkerNavn": {
+      "type": "string"
+    },
+    "søkerFødselsnummer": {
+      "type": "string"
+    },
+    "barnNavn": {
+      "type": "string"
+    },
+    "søknadDato": {
       "type": "string"
     }
   }

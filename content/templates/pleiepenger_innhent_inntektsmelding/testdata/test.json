@@ -1,6 +1,8 @@
 {
   "navFelles": {
-    "enhet": "ARENDAL"
+    "søkerNavn": "Yeskar Ulsnsei"
   },
-  "soknadDato": "2020-02-29"
+  "søkerFødselsnummer": "30029912345",
+  "barnNavn": "Barn Ulsnsei",
+  "søknadDato": "29.02.2020"
 }
