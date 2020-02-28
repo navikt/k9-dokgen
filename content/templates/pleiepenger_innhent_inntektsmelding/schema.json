@@ -5,7 +5,7 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "søkerFødselsnummer",
+    "søkerPersonnummer",
     "barnNavn",
     "søknadDato"
   ],
@@ -16,7 +16,7 @@
     "søkerNavn": {
       "type": "string"
     },
-    "søkerFødselsnummer": {
+    "søkerPersonnummer": {
       "type": "string"
     },
     "barnNavn": {
