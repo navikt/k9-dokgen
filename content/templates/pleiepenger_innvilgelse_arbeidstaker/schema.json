@@ -5,40 +5,22 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "navFelles",
-    "barnNavn",
-    "barnFødselsdato",
-    "søkerFødselsdato",
-    "søkerAdresse",
-    "dagsats",
-    "vedtaksDato",
+    "felles",
+    "dekningsgrad",
     "utbetalingStartDato",
     "utbetalingSluttDato",
-    "innvilgetStartDato",
-    "innvilgetSluttDato",
-    "innvilgetPleiepengerProsent"
+    "beløpTilBruker",
+    "etterbetaling",
+    "bruttoPrÅr",
+    "dagsats",
+    "seksGangerGrunnbeløp"
   ],
   "properties": {
-    "navFelles": {
+    "felles": {
       "type": "object"
     },
-    "barnNavn": {
-      "type": "string"
-    },
-    "barnFødselsdato": {
-      "type": "string"
-    },
-    "søkerFødselsdato": {
-      "type": "string"
-    },
-    "søkerAdresse": {
-      "type": "string"
-    },
-    "dagsats": {
+    "dekningsgrad": {
       "type": "number"
-    },
-    "vedtaksDato": {
-      "type": "string"
     },
     "utbetalingStartDato": {
       "type": "string"
@@ -46,14 +28,20 @@
     "utbetalingSluttDato": {
       "type": "string"
     },
-    "innvilgetStartDato": {
-      "type": "string"
+    "beløpTilBruker": {
+      "type": ["number", "null"]
     },
-    "innvilgetSluttDato": {
-      "type": "string"
+    "etterbetaling": {
+      "type": ["object", "null"]
     },
-    "innvilgetPleiepengerProsent": {
+    "bruttoPrÅr": {
       "type": "number"
+    },
+    "dagsats": {
+      "type": "number"
+    },
+    "seksGangerGrunnbeløp": {
+      "type": ["number", "null"]
     }
   }
 }

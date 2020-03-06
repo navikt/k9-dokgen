@@ -1,10 +1,11 @@
 {
-  "navFelles": {
+  "felles": {
     "saksbehandler": "Vibeke Veileder",
     "enhet": "ARENDAL",
-    "returAdresse": "NAV, Oslo",
-    "tittel": "GENERELT FRITEKSTBREV",
     "søkerNavn": "Silje Søker",
+    "søkerPersonnummer": "300220 12345",
+    "barnNavn": "Barn Ulsnsei",
+    "tittel": "GENERELT FRITEKSTBREV",
     "fritekst": "Dette er en kort fritekst som også kan være lang"
   }
 }

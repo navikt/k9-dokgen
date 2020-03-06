@@ -5,15 +5,15 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "navFelles"
+    "felles"
   ],
   "properties": {
-    "navFelles": {
+    "felles": {
       "required": [
-        "saksbehandler",
-        "enhet",
-        "returAdresse",
-        "søkerNavn"
+        "søkerNavn",
+        "søkerPersonnummer",
+        "fritekst",
+        "tittel"
       ],
       "properties": {
         "saksbehandler": {
@@ -22,13 +22,10 @@
         "enhet": {
           "type": "string"
         },
-        "returAdresse": {
+        "søkerNavn": {
           "type": "string"
         },
         "tittel": {
-          "type": "string"
-        },
-        "søkerNavn": {
           "type": "string"
         },
         "fritekst": {

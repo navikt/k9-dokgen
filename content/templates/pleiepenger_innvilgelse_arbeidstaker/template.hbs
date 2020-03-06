@@ -1,30 +1,41 @@
-Til {{navFelles.søkerNavn}}
+<br />
+<br />
 
-<br/>
+# NAV har innvilget søknaden din om pleiepenger
+{{> brukerdetaljer }}
 
-### SLIK HAR VI BEREGNET PLEIEPENGENE DINE
-Du får en dagsats på brutto {{dagsats}} kroner.
+Du får {{dekningsgrad}} prosent pleiepenger i perioden {{utbetalingStartDato}}  til {{utbetalingSluttDato}}.
 
-Vi viser til vårt vedtak datert {{vedtaksDato}}.
-
-### BEGRUNNELSE
-NAV beregner pleiepenger etter de samme bestemmelsene som gjelder for sykepenger. Dette går fram av folketrygdloven § 9-15.
-
-Vi fastsetter pleiepengegrunnlaget ut fra gjennomsnittet av inntekten din de tre siste hele kalendermånedene før du var borte fra arbeid for å passe barnet ditt, og omregner denne til årsinntekt. Dette gjelder også hvis du har skiftende arbeidstid eller inntekt. Hvis denne årsinntekten avviker mer enn 25 prosent fra inntekten du har hatt de siste 12 månedene, skal pleiepengegrunnlaget fastsettes ved skjønn.
-
-{{> inntektsrapportering }}
-
-{{#if inntektErOverSeksGangerGrunnbeløp}}
-Pleiepengegrunnlaget kan ikke være høyere enn seks ganger grunnbeløpet. Du har inntekt som overstiger dette. Derfor har vi redusert grunnlaget ditt. Dette går fram av folketrygdloven § 8-10.
+{{#if beløpTilBruker}}
+Du får {{beløpTilBruker}} kroner i dagsats før skatt.
+{{#if etterbetaling}}
+Etterbetaling som gjelder fra {{etterbetaling.fom}} til {{etterbetaling.tom}} blir utbetalt innen 5 dager.
+{{else}}
+Pleiepengene blir utbetalt til kontoen din innen den 25. hver måned.
+{{/if}}
+{{else}}
+Du vil motta pleiepengene dine som lønn fra arbeidsgiveren din.
 {{/if}}
 
 
-{{#if fastsattEtterInntektOppgittAvArbeidsgiver}}
-* Vi har fastsatt pleiepengegrunnlaget ditt etter inntekten arbeidsgiveren din har oppgitt til oss.
-* Vi har fastsatt pleiepengegrunnlaget ditt etter hovedregelen.
+### Begrunnelse for vedtaket
+Du får pleiepenger fordi du må være borte fra jobb for å pleie barnet ditt som er sykt, eller som er under utredning for sykdom.
+
+Arbeidsgiveren din har gitt oss opplysninger om inntekten din. Vi bruker et gjennomsnitt av de tre siste månedslønnene dine for å beregne hva som er din årlige inntekt.
+Din årlige inntekt er fastsatt til {{bruttoPrÅr}} kroner.
+
+{{#if seksGangerGrunnbeløp}}
+Pleiepengene dine er fastsatt til {{seksGangerGrunnbeløp}} kroner i året, som er seks ganger grunnbeløpet i folketrygden.
+Du tjener mer enn dette, men du får ikke pleiepenger for den delen av inntekten som overstiger seks ganger grunnbeløpet
 {{/if}}
 
-Vedtaket er gjort etter folketrygdloven §§ 9-15 og 8-28 til 8-30.
+Dette gir deg en dagsats på «dagsats» kroner.
 
 
-{{> footer-utvidet }}
+Du finner informasjon om utbetalingene på nav.no/dittnav.
+Utbetalingen vises på Ditt NAV først på kvelden den dagen pengene er utbetalt. Vær oppmerksom på at utbetalingen står beskrevet som sykepenger og ikke pleiepenger.
+
+
+Vedtaket er gjort etter folketrygdloven §9-10 1.ledd XXX husk kapittel 8 beregningsregler
+
+{{> footer-vedtak }}

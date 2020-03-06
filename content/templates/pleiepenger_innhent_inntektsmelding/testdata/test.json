@@ -1,8 +1,8 @@
 {
-  "navFelles": {
-    "søkerNavn": "Yeskar Ulsnsei"
+  "felles": {
+    "søkerNavn": "Yeskar Ulsnsei",
+    "søkerPersonnummer": "300220 12345",
+    "barnNavn": "Barn Ulsnsei"
   },
-  "søkerPersonnummer": "300220 12345",
-  "barnNavn": "Barn Ulsnsei",
   "søknadDato": "29.02.2020"
 }

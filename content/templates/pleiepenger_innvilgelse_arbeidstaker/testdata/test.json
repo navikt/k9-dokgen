@@ -1,21 +1,21 @@
 {
-  "navFelles": {
+  "felles": {
     "saksbehandler": "Vibeke Veileder",
-    "enhet": "ARENDAL",
-    "returAdresse": "NAV, Oslo",
-    "tittel": "GENERELT FRITEKSTBREV",
     "søkerNavn": "Silje Søker",
+    "søkerPersonnummer": "300220 12345",
+    "barnNavn": "Barn Barnesen",
+    "tittel": null,
     "fritekst": "Dette er en kort fritekst som også kan være lang"
   },
-  "barnNavn": "Barn Barnesen",
-  "barnFødselsdato": "2019-11-02",
-  "søkerFødselsdato": "1919-11-02",
-  "søkerAdresse": "Bostedsgaten 12A, 0165, Oslo",
-  "dagsats": 510,
-  "vedtaksDato": "2019-09-25",
+  "dekningsgrad": 98,
   "utbetalingStartDato": "2020-01-25",
   "utbetalingSluttDato": "2020-10-25",
-  "innvilgetStartDato": "2020-01-25",
-  "innvilgetSluttDato": "2020-10-25",
-  "innvilgetPleiepengerProsent": 0.66
+  "beløpTilBruker": null,
+  "dagsats": 800,
+  "etterbetaling": {
+    "fom": "2020-01-25",
+    "tom": "2020-10-25"
+  },
+  "bruttoPrÅr": 650000,
+  "seksGangerGrunnbeløp": 598000
 }
