@@ -1,0 +1,30 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "felles"
+  ],
+  "properties": {
+    "felles": {
+      "type": "object"
+    },
+    "søkerNavn": {
+      "type": "string"
+    },
+    "søkerPersonnummer": {
+      "type": "string"
+    },
+    "barnNavn": {
+      "type": "string"
+    },
+    "søknadUnderBehandling": {
+      "type": "string"
+    },
+    "revurderingUnderBehandling": {
+      "type": "string"
+    }
+  }
+}
