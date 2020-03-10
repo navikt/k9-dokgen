@@ -21,10 +21,10 @@
       "type": "string"
     },
     "søknadUnderBehandling": {
-      "type": "string"
+      "type": "boolean"
     },
     "revurderingUnderBehandling": {
-      "type": "string"
+      "type": "boolean"
     }
   }
 }
