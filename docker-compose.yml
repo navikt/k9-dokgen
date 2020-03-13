@@ -5,6 +5,6 @@ services:
     container_name: dokgen_dev
     image: navikt/dokgen:latest
     ports:
-      - "5913:8080"
+      - "8291:8080"
     volumes:
       - ./content:/app/content
