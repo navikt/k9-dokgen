@@ -10,7 +10,8 @@
   "dekningsgrad": 98,
   "utbetalingStartDato": "2020-01-25",
   "utbetalingSluttDato": "2020-10-25",
-  "beløpTilBruker": null,
+  "beløpTilBruker": 1000,
+  "refusjonTilArbeidsgiver": 1000,
   "dagsats": 800,
   "etterbetaling": {
     "fom": "2020-01-25",

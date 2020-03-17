@@ -10,6 +10,7 @@
     "utbetalingStartDato",
     "utbetalingSluttDato",
     "beløpTilBruker",
+    "refusjonTilArbeidsgiver",
     "etterbetaling",
     "bruttoPrÅr",
     "dagsats",
@@ -29,6 +30,9 @@
       "type": "string"
     },
     "beløpTilBruker": {
+      "type": ["number", "null"]
+    },
+    "refusjonTilArbeidsgiver": {
       "type": ["number", "null"]
     },
     "etterbetaling": {

@@ -10,10 +10,11 @@ Etterbetaling som gjelder fra {{etterbetaling.fom}} til {{etterbetaling.tom}} bl
 {{else}}
 Pleiepengene blir utbetalt til kontoen din innen den 25. hver måned.
 {{/if}}
-{{else}}
-Du vil motta pleiepengene dine som lønn fra arbeidsgiveren din.
 {{/if}}
 
+{{#if refusjonTilArbeidsgiver}}
+Du vil motta pleiepengene dine som lønn fra arbeidsgiveren din.
+{{/if}}
 
 ### Begrunnelse for vedtaket
 Du får pleiepenger fordi du må være borte fra jobb for å pleie barnet ditt som er sykt, eller som er under utredning for sykdom.
@@ -26,7 +27,7 @@ Pleiepengene dine er fastsatt til {{seksGangerGrunnbeløp}} kroner i året, som 
 Du tjener mer enn dette, men du får ikke pleiepenger for den delen av inntekten som overstiger seks ganger grunnbeløpet
 {{/if}}
 
-Dette gir deg en dagsats på «dagsats» kroner.
+Dette gir deg en dagsats på {{dagsats}} kroner.
 
 
 Du finner informasjon om utbetalingene på nav.no/dittnav.
