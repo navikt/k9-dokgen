@@ -17,11 +17,12 @@ body{
 }
 
 #content {
+    padding-top: 20mm;
     margin: 1rem;
 }
 
 #header {
-    margin-bottom: 0mm;
+    margin-bottom: 0;
 }
 
 #footer {
@@ -53,7 +54,6 @@ body{
 h1 {
     font-size: 25px;
     font-weight: 700;
-    margin: 0mm 0 10mm 0;
 }
 
 h2 {
