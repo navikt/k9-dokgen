@@ -1,2 +1,2 @@
-FROM navikt/dokgen/familie-dokgen:1.0_20190904114249_2f4517a
+FROM navikt/dokgen:latest
 COPY content content
