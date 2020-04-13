@@ -5,7 +5,14 @@
   },
   "fom": "01.05.2020",
   "tom": "31.05.2020",
-  "månedsbeløp": 1000,
+  "bruttoNæringsinntekt": 86000,
+  "bruttoFrilansinntekt": 4000,
+  "bruttoSNFLinntekt": 90000,
   "beregningsgrunnlag": 590000,
-  "kompensertBeregningsgrunnlag": 590000
+  "kompensertBeregningsgrunnlag": 470000,
+  "dagsats": 1000,
+  "månedsbeløpOgOpprettholdtInntekt": 32000,
+  "opprettholdtInntekt": 4000,
+  "månedsbeløp": 28000,
+  "måned": "april"
 }

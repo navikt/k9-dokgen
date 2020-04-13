@@ -1,9 +1,3 @@
-<!--
-<p align="right">
-{{brevDato}}
-</p>
--->
-
 NAVN: {{felles.søkerNavn}}
 <br/>
 FØDSELSNUMMER: {{felles.søkerPersonnummer}}
@@ -11,21 +5,34 @@ FØDSELSNUMMER: {{felles.søkerPersonnummer}}
 <br/>
 
 ## NAV har innvilget søknaden din om kompensasjon for tap av inntekt som næringsdrivende og/eller frilanser
-
-
-Du får {{månedsbeløp}} før skatt for perioden {{fom}} til {{tom}}.
+Du får {{månedsbeløp}} kroner før skatt for perioden {{fom}} til {{tom}}.
 
 Pengene blir utbetalt til kontoen din innen 3 virkedager.
 
 
-
 ### Begrunnelse for vedtaket
-
 Du får kompensasjon for tap av inntekt i din næringsvirksomhet og som frilanser, siden inntektstapet skyldes tiltakene som er igangsatt av myndighetene for å begrense smittespredning av covid-19.
 
+
+### Begrunnelse for beregningen
+Næringsinntekten du har oppgitt for 2019/2020 viser at du har en beregnet årsinntekt på {{bruttoNæringsinntekt}} kroner i næringsinntekt.
+
+Inntekten din som frilanser de siste 12 månedene frem til 1.mars viser at du har en beregnet årsinntekt på {{bruttoFrilansinntekt}} kroner.
+
+Dette gir en samlet beregnet årsinntekt på {{bruttoSNFLinntekt}} kroner.
+
+Inntekt over 6 ganger grunnbeløpet gis det ikke kompensasjon for.
+Har du hatt arbeidsinntekt ved siden av har denne redusert beløpet på 6 G, da denne midlertidige ordningen ikke kompenserer tap av arbeidsinntekt.
+Du får kompensert 80 prosent av {{beregningsgrunnlag}} kroner. Det gir en årlig kompensasjon på {{kompensertBeregningsgrunnlag}} kroner.
+
+Dette gir en dagsats på {{dagsats}} kroner. Beløpet gis ikke for lørdag og søndag , derfor er det {{månedsbeløpOgOpprettholdtInntekt}} kroner du har rett på i {{måned}}.
+
+Du har oppretthold en inntekt på {{opprettholdtInntekt}} kroner for {{måned}} måned. Derfor er beløpet for {{måned}} redusert med en sum tilsvarende 80 prosent av dette.
+
+Det gir en utbetaling for {{måned}} måned på {{månedsbeløp}} kroner.
 
 
 <br>
 Vedtaket er gjort etter Koronaloven og forskrift..
 
-{{> footer-korona }}
+{{> korona-footer }}
