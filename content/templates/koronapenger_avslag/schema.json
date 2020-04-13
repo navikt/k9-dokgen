@@ -14,9 +14,6 @@
     "søkerNavn": {
       "type": "string"
     },
-    "søkerPersonnummer": {
-      "type": "string"
-    },
     "bruttoPrÅr": {
       "type": "number"
     },
