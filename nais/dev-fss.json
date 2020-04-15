@@ -1,5 +1,4 @@
 {
-  "cluster": "preprod",
   "namespace": "q1",
   "minReplicas": "1",
   "maxReplicas": "2",
