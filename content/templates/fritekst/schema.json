@@ -19,9 +19,6 @@
         "saksbehandler": {
           "type": "string"
         },
-        "enhet": {
-          "type": "string"
-        },
         "søkerNavn": {
           "type": "string"
         },
