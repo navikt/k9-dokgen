@@ -11,35 +11,20 @@
     "felles": {
       "type": "object"
     },
-    "fom": {
-      "type": "string"
+    "periode": {
+      "type": "object"
     },
-    "tom": {
-      "type": "string"
-    },
-    "bruttoNæringsinntekt": {
-      "type": "number"
-    },
-    "bruttoFrilans": {
-      "type": "number"
-    },
-    "bruttoSNFLinntekt": {
-      "type": "number"
+    "soknadskombinasjon": {
+      "type": "object"
     },
     "beregningsgrunnlag": {
-      "type": "number"
-    },
-    "kompensertBeregningsgrunnlag": {
       "type": "number"
     },
     "dagsats": {
       "type": "number"
     },
-    "månedsbeløpOgLøpendeInntekt": {
-      "type": "number"
-    },
     "opprettholdtInntekt": {
-      "type": "number"
+      "type": ["number", "null"]
     },
     "månedsbeløp": {
       "type": "number"

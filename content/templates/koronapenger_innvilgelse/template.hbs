@@ -4,35 +4,29 @@ FØDSELSNUMMER: {{felles.søkerPersonnummer}}
 
 <br/>
 
-## NAV har innvilget søknaden din om kompensasjon for tap av inntekt som næringsdrivende og/eller frilanser
-Du får {{månedsbeløp}} kroner før skatt for perioden {{fom}} til {{tom}}.
+## Du er innvilget kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans}}
+Du får {{månedsbeløp}} kroner for {{#if periode}} perioden {{periode.fom}} til og med {{periode.tom}}{{else}}periodene du har søkt for i {{måned}}{{/if}}.
 
 Pengene blir utbetalt til kontoen din innen 3 virkedager.
 
 
-### Begrunnelse for vedtaket
-Du får kompensasjon for tap av inntekt i din næringsvirksomhet og som frilanser, siden inntektstapet skyldes tiltakene som er igangsatt av myndighetene for å begrense smittespredning av covid-19.
+### Bakgrunn for vedtaket
+Myndighetene har vedtatt at {{> frisinn-selvstendigEllerFrilans}} skal få kompensasjon for tapt inntekt som følge av koronasituasjonen. Dette er en midlertidig ordning.
+
+
+Det er besluttet at det skal gis 80 prosent kompensasjon av tapt inntekt opp til en årsinntekt på 599 148 kroner, som er 6 ganger grunnbeløpet.
+Denne ordningen kompenserer ikke tap av arbeidsinntekt, og derfor blir eventuell inntekt som arbeidstaker trukket fra beløpet på 6G.
 
 
 ### Begrunnelse for beregningen
-Næringsinntekten du har oppgitt for 2019/2020 viser at du har en beregnet årsinntekt på {{bruttoNæringsinntekt}} kroner i næringsinntekt.
+På bakgrunn av opplysninger vi har fått om inntekten din, har vi kommet frem til at du har et beregningsgrunnlag på {{beregningsgrunnlag}} kroner.
 
-Inntekten din som frilanser de siste 12 månedene frem til 1.mars viser at du har en beregnet årsinntekt på {{bruttoFrilansinntekt}} kroner.
+{{#if opprettholdtInntekt}}
+Du har hatt inntekt som {{> frisinn-selvstendigEllerFrilans}} i perioden du har søkt kompensasjon for. Utbetalingen du får, er derfor redusert tilsvarende 80 prosent av dette.
+{{/if}}
 
-Dette gir en samlet beregnet årsinntekt på {{bruttoSNFLinntekt}} kroner.
+<br/>
 
-Inntekt over 6 ganger grunnbeløpet gis det ikke kompensasjon for.
-Har du hatt arbeidsinntekt ved siden av har denne redusert beløpet på 6 G, da denne midlertidige ordningen ikke kompenserer tap av arbeidsinntekt.
-Du får kompensert 80 prosent av {{beregningsgrunnlag}} kroner. Det gir en årlig kompensasjon på {{kompensertBeregningsgrunnlag}} kroner.
+Du er ansvarlig for å gi oss riktige opplysninger om inntekten din. Vi kontrollerer opplysningene du har gitt oss.
 
-Dette gir en dagsats på {{dagsats}} kroner. Beløpet gis ikke for lørdag og søndag , derfor er det {{månedsbeløpOgOpprettholdtInntekt}} kroner du har rett på i {{måned}}.
-
-Du har oppretthold en inntekt på {{opprettholdtInntekt}} kroner for {{måned}} måned. Derfor er beløpet for {{måned}} redusert med en sum tilsvarende 80 prosent av dette.
-
-Det gir en utbetaling for {{måned}} måned på {{månedsbeløp}} kroner.
-
-
-<br>
-Vedtaket er gjort etter Koronaloven og forskrift..
-
-{{> korona-footer }}
+{{> frisinn-footer }}
