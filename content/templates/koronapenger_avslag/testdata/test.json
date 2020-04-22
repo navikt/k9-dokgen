@@ -3,9 +3,14 @@
     "søkerNavn": "Selv Sjeler",
     "søkerPersonnummer": "300220 12345"
   },
-  "dekningsgrad": 80,
-  "beløpTilBruker": 1000,
-  "bruttoPrÅr": 650000,
-  "seksGangerGrunnbeløp": 598000,
-  "klageFristUker": 4
+  "soknadskombinasjon": {
+    "sn": true,
+    "fl": true,
+    "snfl": true
+  },
+  "brevDato": "22.04.2020",
+  "ingenInntektSomFL": false,
+  "annenInntektHøyereEnn6g": false,
+  "inntektLavereEnn0_75g": false,
+  "inntektHøyereEnn6g": true
  }

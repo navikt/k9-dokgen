@@ -1,8 +1,8 @@
-<!--
+
 <p align="right">
 {{brevDato}}
 </p>
--->
+
 
 Navn: {{felles.søkerNavn}}
 <br/>
@@ -10,26 +10,28 @@ Fødselsnummer: {{felles.søkerPersonnummer}}
 
 <br/>
 
-## NAV har avslått søknaden din om kompensasjon for tapt næringsinntekt og /eller frilansinntekt
+## NAV har avslått søknaden din om kompensasjon for tapt næringsinntekt og/eller frilansinntekt
 
 #### Dette har vi avslått
 
-Siden du har en årlig arbeidsinntekt på {{dekningsgrad}} prosent av {{seksGangerGrunnbeløp}} kroner, som er 6 ganger grunnbeløpet, har du ikke rett til å få kompensert tapt næringsinntekt eller inntekt som frilanser.
 
+{{#if ingenInntektSomFL}}
+Du har ikke rett til utbetaling av kompensasjon for tapt inntekt som frilanser. Dette er fordi du ikke har inntekter som frilanser i perioden vi legger til grunn for opptjeningen.
+Årsaken til dette kan være at arbeidsgiveren du har utført oppdrag for, har rapportert inntekten din som lønnsinntekt.
 
-Slik har vi kommet frem til størrelsen på arbeidsinntekten din.. ..
+{{else if annenInntektHøyereEnn6g}}
+Du har ikke rett til utbetaling av kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans}}. Dette er fordi du har annen inntekt som tilsvarer en årsinntekt på mer enn 6 ganger grunnbeløpet, det vil si 599 148 kroner.
 
+{{else if inntektLavereEnn0_75g}}
+Du har ikke rett til utbetaling av kompensasjon for tapt inntekt. Dette er fordi din beregnede årlige inntekt som {{> frisinn-selvstendigEllerFrilans}} er lavere en 0,75 ganger grunnbeløpet, det vil si 74 894 kroner.
 
+{{else if inntektHøyereEnn6g}}
+Du har ikke rett til utbetaling av kompensasjon for tapt inntekt. Dette er fordi du har samlet inntekt som tilsvarer en årsinntekt på mer enn 6 ganger grunnbeløpet, det vil si 559 148 kroner.
+{{/if}}
 
-<br>
-Vedtaket er gjort etter Koronaloven og forskrift..
+Vedtaket er gjort etter Koronaloven med tilhørende midlertidige forskrift om kompensasjonsytelse for selvstendig næringsdrivende og frilansere.
 
 #### Du har rett til å klage
+Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner informasjon om hvordan du går frem på nav.no/klage. 
 
-Du kan klage innen {{klageFristUker}} uker fra den datoen du mottok vedtaket. Du finner skjema og informasjon på nav.no/klage.
-
-#### Du har rett til innsyn
-
-På nav.no/dittnav kan du se dokumentene i saken din.
-
-{{> footer-vedtak }}
+{{> korona-footer }}

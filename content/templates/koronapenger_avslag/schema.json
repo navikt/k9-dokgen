@@ -11,17 +11,20 @@
     "felles": {
       "type": "object"
     },
-    "søkerNavn": {
-      "type": "string"
+    "soknadskombinasjon": {
+      "type": "object"
     },
-    "bruttoPrÅr": {
-      "type": "number"
+    "inntektLavereEnn0_75g": {
+      "type": "boolean"
     },
-    "seksGangerGrunnbeløp": {
-      "type": ["number", "null"]
+    "inntektHøyereEnn6g": {
+      "type": "boolean"
     },
-    "klageFristUker": {
-      "type": "number"
+    "annenInntektHøyereEnn6g": {
+      "type": "boolean"
+    },
+    "ingenInntektSomFL": {
+      "type": "boolean"
     }
   }
 }
