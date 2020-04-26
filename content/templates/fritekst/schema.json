@@ -16,9 +16,6 @@
         "tittel"
       ],
       "properties": {
-        "saksbehandler": {
-          "type": "string"
-        },
         "søkerNavn": {
           "type": "string"
         },
