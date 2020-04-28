@@ -31,6 +31,9 @@
     },
     "måned": {
       "type": "string"
+    },
+    "soktOmFrilansUtenFrilansinntekt": {
+      "type": "boolean"
     }
   }
 }

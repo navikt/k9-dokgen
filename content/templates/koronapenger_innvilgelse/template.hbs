@@ -1,11 +1,10 @@
 NAVN: {{felles.søkerNavn}}
 <br/>
 FØDSELSNUMMER: {{felles.søkerPersonnummer}}
-
-<br/>
+<br />
 
 ## Du er innvilget kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans}}
-Du får {{månedsbeløp}} kroner for {{#if periode}} perioden {{periode.fom}} til og med {{periode.tom}}{{else}}periodene du har søkt for i {{måned}}{{/if}}.
+Du får {{månedsbeløp}} kroner for perioden {{periode.fom}} til og med {{periode.tom}}.
 
 Pengene blir utbetalt til kontoen din innen 3 virkedager.
 
@@ -18,6 +17,9 @@ Det er besluttet at det skal gis 80 prosent kompensasjon av tapt inntekt opp til
 Denne ordningen kompenserer ikke tap av arbeidsinntekt, og derfor blir eventuell inntekt som arbeidstaker trukket fra beløpet på 6G.
 
 
+Hvis du er både selvstendig næringsdrivende og frilanser, og kun søker om kompensasjon for den ene delen, vil inntekten fra den andre delen også bli trukket fra beløpet på 6G.
+
+
 ### Begrunnelse for beregningen
 På bakgrunn av opplysninger vi har fått om inntekten din, har vi kommet frem til at du har et beregningsgrunnlag på {{beregningsgrunnlag}} kroner.
 
@@ -25,8 +27,18 @@ På bakgrunn av opplysninger vi har fått om inntekten din, har vi kommet frem t
 Du har hatt inntekt som {{> frisinn-selvstendigEllerFrilans}} i perioden du har søkt kompensasjon for. Utbetalingen du får, er derfor redusert tilsvarende 80 prosent av dette.
 {{/if}}
 
-<br/>
-
 Du er ansvarlig for å gi oss riktige opplysninger om inntekten din. Vi kontrollerer opplysningene du har gitt oss.
+
+{{#if soktOmFrilansUtenFrilansinntekt}}
+### Du er ikke frilanser
+Du har ikke rett til kompensasjon for tapt inntekt som frilanser. Dette er fordi det ikke er registrert inntekt på deg som frilanser i perioden vi legger til grunn for opptjeningen. Årsaken til dette kan være at arbeidsgiveren du har utført oppdrag for, har rapportert inntekten din som lønn som arbeidstaker.
+{{/if}}
+
+Vedtaket er gjort etter Koronaloven med tilhørende midlertidige forskrift om kompensasjonsytelse for selvstendig næringsdrivende og frilansere.
+
+### Til informasjon
+Hvis du også neste måned har tapt inntekt på grunn av koronasituasjonen, sender du en ny søknad om kompensasjon i løpet av neste måned.
+
+På nav.no kan du lese mer om denne ordningen. Der vil du også finne eksempler på hvordan kompensasjonen blir beregnet.
 
 {{> frisinn-footer }}
