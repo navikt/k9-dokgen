@@ -9,7 +9,6 @@
     "periode",
     "soknadskombinasjon",
     "beregningsgrunnlag",
-    "dagsats",
     "opprettholdtInntekt",
     "månedsbeløp",
     "soktOmFrilansUtenFrilansinntekt"
@@ -28,9 +27,6 @@
       "type": "object"
     },
     "beregningsgrunnlag": {
-      "type": "number"
-    },
-    "dagsats": {
       "type": "number"
     },
     "opprettholdtInntekt": {
