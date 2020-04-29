@@ -12,21 +12,20 @@ Fødselsnummer: {{felles.søkerPersonnummer}}
 
 ## NAV har avslått søknaden din om kompensasjon for tapt næringsinntekt og/eller frilansinntekt
 
-### Dette har vi avslått
+### Begrunnelse for avslaget
 
 
 {{#if ingenInntektSomFL}}
-Du har ikke rett til utbetaling av kompensasjon for tapt inntekt som frilanser. Dette er fordi du ikke har inntekter som frilanser i perioden vi legger til grunn for opptjeningen.
-Årsaken til dette kan være at arbeidsgiveren du har utført oppdrag for, har rapportert inntekten din som lønnsinntekt.
+Du har ikke rett til kompensasjon for tapt inntekt som frilanser. Dette er fordi det ikke er registrert inntekt på deg som frilanser i perioden vi legger til grunn for opptjeningen. Årsaken til dette kan være at arbeidsgiveren du har utført oppdrag for, har rapportert inntekten din som lønn som arbeidstaker.
 
 {{else if annenInntektHøyereEnn6g}}
-Du har ikke rett til utbetaling av kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans}}. Dette er fordi du har annen inntekt som tilsvarer en årsinntekt på mer enn 6 ganger grunnbeløpet, det vil si 599 148 kroner.
+Du har ikke rett til kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans}}. Dette er fordi du har annen inntekt som tilsvarer en årsinntekt på mer enn 6G (599 148 kroner). Denne ordningen kompenserer ikke for inntekt over 6G.
 
 {{else if inntektLavereEnn0_75g}}
-Du har ikke rett til utbetaling av kompensasjon for tapt inntekt. Dette er fordi din beregnede årlige inntekt som {{> frisinn-selvstendigEllerFrilans}} er lavere en 0,75 ganger grunnbeløpet, det vil si 74 894 kroner.
+Du har ikke rett til kompensasjon for tapt inntekt. Dette er fordi din beregnede årlige inntekt som {{> frisinn-selvstendigEllerFrilans}} er lavere enn 0,75G (74 894 kroner). For å ha rett til kompensasjon for tapt inntekt må du ha en årsinntekt på minst 0,75G.
 
 {{else if inntektHøyereEnn6g}}
-Du har ikke rett til utbetaling av kompensasjon for tapt inntekt. Dette er fordi du har samlet inntekt som tilsvarer en årsinntekt på mer enn 6 ganger grunnbeløpet, det vil si 559 148 kroner.
+Du har ikke rett til kompensasjon for tapt inntekt. Dette er fordi du har samlet inntekt som tilsvarer en årsinntekt på mer enn 6G (599 148 kroner). Denne ordningen kompenserer ikke for inntekt over 6G.
 {{/if}}
 
 Vedtaket er gjort etter Koronaloven med tilhørende midlertidige forskrift om kompensasjonsytelse for selvstendig næringsdrivende og frilansere.
