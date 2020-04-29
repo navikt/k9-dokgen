@@ -5,7 +5,14 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "felles"
+    "felles",
+    "periode",
+    "soknadskombinasjon",
+    "beregningsgrunnlag",
+    "dagsats",
+    "opprettholdtInntekt",
+    "månedsbeløp",
+    "soktOmFrilansUtenFrilansinntekt"
   ],
   "properties": {
     "felles": {
@@ -15,6 +22,9 @@
       "type": "object"
     },
     "soknadskombinasjon": {
+      "type": "object"
+    },
+    "innvilgetSoknadskombinasjon": {
       "type": "object"
     },
     "beregningsgrunnlag": {

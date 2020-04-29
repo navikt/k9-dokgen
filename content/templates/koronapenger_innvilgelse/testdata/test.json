@@ -17,5 +17,10 @@
     "fl": true,
     "snfl": true
   },
+  "innvilgetSoknadskombinasjon": {
+    "sn": true,
+    "fl": false,
+    "snfl": false
+  },
   "soktOmFrilansUtenFrilansinntekt": true
 }
