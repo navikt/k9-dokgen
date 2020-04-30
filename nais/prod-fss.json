@@ -1,7 +1,7 @@
 {
   "namespace": "default",
-  "minReplicas": "1",
-  "maxReplicas": "2",
+  "minReplicas": "2",
+  "maxReplicas": "3",
   "ingresses": [
     "https://k9-dokgen.nais.adeo.no"
   ],
