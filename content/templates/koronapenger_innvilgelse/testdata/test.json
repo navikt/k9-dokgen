@@ -1,7 +1,8 @@
 {
   "felles": {
     "søkerNavn": "Selv Sjeler",
-    "søkerPersonnummer": "300220 12345"
+    "søkerPersonnummer": "300220 12345",
+    "brevDato": "4. april 2020"
   },
   "periode": {
     "fom": "01.05.2020",
