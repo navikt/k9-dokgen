@@ -9,15 +9,31 @@
   ],
   "properties": {
     "felles": {
-      "type": "object"
+      "required": [
+        "søkerNavn",
+        "søkerPersonnummer",
+        "brevDato",
+        "fritekst"
+      ],
+      "properties": {
+        "søkerNavn": {
+          "type": "string"
+        },
+        "søkerPersonnummer": {
+          "type": "string"
+        },
+        "brevDato": {
+          "type": "string"
+        },
+        "fritekst": {
+          "type": "string"
+        }
+      }
     },
     "ytelse": {
       "type": "string"
     },
     "avdeling": {
-      "type": "string"
-    },
-    "fritekst": {
       "type": "string"
     }
   }

@@ -2,9 +2,9 @@
   "felles": {
     "søkerNavn": "Selv Sjeler",
     "søkerPersonnummer": "300220 12345",
-    "brevDato": "1. mai 2020"
+    "brevDato": "1. mai 2020",
+    "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold"
   },
   "ytelse": "frisinn",
-  "avdeling": "NAV",
-  "fritekst": "Saksbehandler mener at du på grunn av ..."
+  "avdeling": "NAV"
 }
