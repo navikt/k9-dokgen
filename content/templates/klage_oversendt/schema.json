@@ -1,0 +1,40 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "felles"
+  ],
+  "properties": {
+    "felles": {
+      "required": [
+        "søkerNavn",
+        "søkerPersonnummer",
+        "brevDato",
+        "fritekst"
+      ],
+      "properties": {
+        "søkerNavn": {
+          "type": "string"
+        },
+        "søkerPersonnummer": {
+          "type": "string"
+        },
+        "brevDato": {
+          "type": "string"
+        },
+        "fritekst": {
+          "type": "string"
+        }
+      }
+    },
+    "ytelse": {
+      "type": "string"
+    },
+    "avdeling": {
+      "type": "string"
+    }
+  }
+}
