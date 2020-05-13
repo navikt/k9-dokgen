@@ -19,7 +19,7 @@
       "type": "object"
     },
     "etterbetaling": {
-      "type": ["string", "null"]
+      "type": ["number", "null"]
     },
     "periode": {
       "type": "object"
