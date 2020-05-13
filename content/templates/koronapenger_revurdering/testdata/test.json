@@ -1,0 +1,28 @@
+{
+  "felles": {
+    "søkerNavn": "Selv Sjeler",
+    "søkerPersonnummer": "300220 12345",
+    "brevDato": "4. april 2020"
+  },
+  "etterbetaling": "3000",
+  "periode": {
+    "fom": "1. mai 2020",
+    "tom": "31. mai 2020"
+  },
+  "beregningsgrunnlag": 590000,
+  "dagsats": 1000,
+  "opprettholdtInntekt": 400,
+  "månedsbeløp": 28000,
+  "måned": "april",
+  "soknadskombinasjon": {
+    "sn": true,
+    "fl": true,
+    "snfl": true
+  },
+  "innvilgetSoknadskombinasjon": {
+    "sn": true,
+    "fl": false,
+    "snfl": false
+  },
+  "soktOmFrilansUtenFrilansinntekt": true
+}

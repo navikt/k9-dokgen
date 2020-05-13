@@ -1,0 +1,45 @@
+{{> frisinn-header }}
+
+## NAV har endret din kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans innvilgetSoknadskombinasjon}}
+
+Ditt nye beløp for perioden {{periode.fom}} til og med {{periode.tom}} er {{månedsbeløp}} kroner.
+Derfor får du etterbetalt {{etterbetaling}} kroner.
+Pengene blir utbetalt til kontoen din innen 3 virkedager.
+
+
+### Bakgrunn for vedtaket
+Myndighetene har vedtatt at {{> frisinn-selvstendigEllerFrilans soknadskombinasjon}} skal få kompensasjon for tapt inntekt som følge av koronasituasjonen. Dette er en midlertidig ordning.
+
+
+Det er besluttet at det skal gis 80 prosent kompensasjon av tapt inntekt opp til en årsinntekt på 599 148 kroner, som er 6 ganger grunnbeløpet.
+Denne ordningen kompenserer ikke tap av arbeidsinntekt, og derfor blir eventuell inntekt som arbeidstaker trukket fra beløpet på 6G.
+
+
+Hvis du er både selvstendig næringsdrivende og frilanser, og kun søker om kompensasjon for den ene delen, vil inntekten fra den andre delen også bli trukket fra beløpet på 6G.
+
+
+### Begrunnelse for beregningen
+På bakgrunn av opplysninger vi har fått om inntekten din, har vi kommet frem til at du har et beregningsgrunnlag på {{beregningsgrunnlag}} kroner.
+
+{{#if opprettholdtInntekt}}
+Du har hatt inntekt som {{> frisinn-selvstendigEllerFrilans innvilgetSoknadskombinasjon}} i perioden du har søkt kompensasjon for. Utbetalingen du får, er derfor redusert tilsvarende 80 prosent av dette.
+{{/if}}
+
+Du er ansvarlig for å gi oss riktige opplysninger om inntekten din. Vi kontrollerer opplysningene du har gitt oss.
+
+{{#if soktOmFrilansUtenFrilansinntekt}}
+### Du er ikke frilanser
+Du har ikke rett til kompensasjon for tapt inntekt som frilanser. Dette er fordi det ikke er registrert inntekt på deg som frilanser i perioden vi legger til grunn for opptjeningen. Årsaken til dette kan være at arbeidsgiveren du har utført oppdrag for, har rapportert inntekten din som lønn som arbeidstaker.
+{{/if}}
+
+Vedtaket er gjort etter Koronaloven med tilhørende midlertidige forskrift om kompensasjonsytelse for selvstendig næringsdrivende og frilansere.
+
+### Til informasjon
+Denne ordningen er lagt opp til at du må søke **etterskuddsvis** måned for måned. Det vil si at når du har inntektstap for én måned, må du vente til begynnelsen av måneden **etter** før du søker.
+
+**Eksempel:** Når du har inntektstap for mai måned, sender du søknad om kompensasjon for denne måneden i begynnelsen av juni.
+
+
+På [nav.no](https://nav.no) kan du lese mer om denne ordningen. Der vil du også finne eksempler på hvordan kompensasjonen blir beregnet.
+
+{{> frisinn-footer }}
