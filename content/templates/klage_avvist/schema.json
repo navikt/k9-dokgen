@@ -31,6 +31,9 @@
     },
     "aarsakManglerKlagegrunn": {
       "type": "boolean"
+    },
+    "hjemler": {
+      "type": "string"
     }
   }
 }
