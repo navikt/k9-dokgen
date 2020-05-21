@@ -2,8 +2,11 @@
 
 ## NAV har omgjort vedtaket ditt om {{ytelse}}
 
-Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at vedtaket til {{avdeling}} må  gjøres om.
-
+{{#if felles.erVurdertAvNK}}
+Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser må  gjøres om.
+{{else}}
+Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at vedtaket ditt må gjøres om.
+{{/if}}
 
 ### Dette har vi lagt vekt på i vurderingen vår
 
@@ -14,4 +17,4 @@ Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at 
 ### Du har rett til å klage
 Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner informasjon om hvordan du går frem på [nav.no/klage](https://nav.no/klage).
 
-{{> klage-nfp-footer }}
+{{> klage-footer }}

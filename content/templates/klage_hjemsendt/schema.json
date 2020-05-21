@@ -14,7 +14,8 @@
         "søkerNavn",
         "søkerPersonnummer",
         "brevDato",
-        "fritekst"
+        "fritekst",
+        "erVurdertAvNK"
       ],
       "properties": {
         "søkerNavn": {
@@ -28,6 +29,9 @@
         },
         "fritekst": {
           "type": "string"
+        },
+        "erVurdertAvNK": {
+          "type": "boolean"
         }
       }
     },

@@ -2,7 +2,8 @@
   "felles": {
     "søkerNavn": "Selv Sjeler",
     "søkerPersonnummer": "300220 12345",
-    "brevDato": "1. mai 2020"
+    "brevDato": "1. mai 2020",
+    "erVurdertAvNK": false
   },
   "ytelse": "inntektkompensasjon for frilans og selvstendig næringsdrivende",
   "avdeling": "NAV",
