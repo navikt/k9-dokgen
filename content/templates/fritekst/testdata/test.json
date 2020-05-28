@@ -4,6 +4,6 @@
     "søkerPersonnummer": "300220 12345",
     "barnNavn": "Barn Ulsnsei",
     "tittel": "Fritekstet avslagsbrev",
-    "fritekst": "Denne friteksten forteller deg at du har fått avslag. En kort fritekst som også kan være lang"
+    "fritekst": "Denne friteksten forteller _deg_ at du har fått avslag. En kort fritekst som *også* kan være lang"
   }
 }
