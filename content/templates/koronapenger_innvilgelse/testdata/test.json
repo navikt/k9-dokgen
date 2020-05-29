@@ -12,7 +12,7 @@
   "dagsats": 1000,
   "opprettholdtInntekt": 400,
   "månedsbeløp": 28000,
-  "måned": "april",
+  "måned": "mai",
   "soknadskombinasjon": {
     "sn": true,
     "fl": true,
@@ -23,5 +23,7 @@
     "fl": false,
     "snfl": false
   },
-  "soktOmFrilansUtenFrilansinntekt": true
+  "soktOmFrilansUtenFrilansinntekt": true,
+  "total": 30000,
+  "etterbetaling": 2000
 }
