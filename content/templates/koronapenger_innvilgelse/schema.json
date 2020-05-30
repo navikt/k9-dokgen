@@ -18,7 +18,7 @@
     "felles": {
       "type": "object"
     },
-    "etterbetaling": {
+    "endring": {
       "type": ["number", "null"]
     },
     "periode": {
