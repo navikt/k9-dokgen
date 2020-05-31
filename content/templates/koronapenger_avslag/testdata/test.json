@@ -13,5 +13,7 @@
   "ingenInntektSomFL": false,
   "annenInntektHøyereEnn6g": false,
   "inntektLavereEnn0_75g": false,
-  "inntektHøyereEnn6g": true
+  "inntektHøyereEnn6g": true,
+  "etterbetaling": 2000,
+  "måned": "mai"
  }
