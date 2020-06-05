@@ -4,7 +4,8 @@
     "søkerPersonnummer": "300220 12345",
     "brevDato": "4. april 2020"
   },
-  "etterbetaling": "3000",
+  "etterbetaling": null,
+  "feilutbetaling": 200,
   "periode": {
     "fom": "1. mai 2020",
     "tom": "31. mai 2020"
@@ -24,5 +25,14 @@
     "fl": false,
     "snfl": false
   },
-  "soktOmFrilansUtenFrilansinntekt": true
+  "soktOmFrilansUtenFrilansinntekt": true,
+  "redusertUtbetalingAarsaker": {
+    "harEndretInntektFor2019": true,
+    "harEndretInntektFor2020ForMars": true,
+    "harEndretDatoForNyoppstartetSN": true,
+    "harEndretSoknadsperioden": true,
+    "soknadGjelderIkkeLengerFL": true,
+    "soknadGjelderIkkeLengerSN": true,
+    "harEndretInntektISoknadsperioden": true
+  }
 }
