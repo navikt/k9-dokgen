@@ -3,9 +3,13 @@
 ## NAV har endret din kompensasjon for tapt inntekt som {{> frisinn-selvstendigEllerFrilans innvilgetSoknadskombinasjon}}
 
 Ditt nye beløp for perioden {{periode.fom}} til og med {{periode.tom}} er {{månedsbeløp}} kroner.
-Derfor får du etterbetalt {{etterbetaling}} kroner.
-Pengene blir utbetalt til kontoen din innen 3 virkedager.
 
+{{#if feilutbetaling}}
+Det betyr at du tidligere har fått {{feilutbetaling}} kroner for mye utbetalt. Vi vil på et senere tidspunkt ta opp tilbakebetaling av dette. Du trenger ikke gjøre noe med dette nå.
+{{>frisinn-redusertUtbetaling redusertUtbetalingAarsaker}}
+{{/if}}
+{{#if etterbetaling}}Derfor får du etterbetalt {{etterbetaling}} kroner.
+Pengene blir utbetalt til kontoen din innen 3 virkedager.
 
 ### Bakgrunn for vedtaket
 Myndighetene har vedtatt at {{> frisinn-selvstendigEllerFrilans soknadskombinasjon}} skal få kompensasjon for tapt inntekt som følge av koronasituasjonen. Dette er en midlertidig ordning.
@@ -32,8 +36,11 @@ Du er ansvarlig for å gi oss riktige opplysninger om inntekten din. Vi kontroll
 Du har ikke rett til kompensasjon for tapt inntekt som frilanser. Dette er fordi det ikke er registrert inntekt på deg som frilanser i perioden vi legger til grunn for opptjeningen. Årsaken til dette kan være at arbeidsgiveren du har utført oppdrag for, har rapportert inntekten din som lønn som arbeidstaker.
 {{/if}}
 
+{{/if}}
+
 Vedtaket er gjort etter Koronaloven med tilhørende midlertidige forskrift om kompensasjonsytelse for selvstendig næringsdrivende og frilansere.
 
+{{#if etterbetaling}}
 ### Til informasjon
 Denne ordningen er lagt opp til at du må søke **etterskuddsvis** måned for måned. Det vil si at når du har inntektstap for én måned, må du vente til begynnelsen av måneden **etter** før du søker.
 
@@ -41,5 +48,6 @@ Denne ordningen er lagt opp til at du må søke **etterskuddsvis** måned for m�
 
 
 På [nav.no](https://nav.no) kan du lese mer om denne ordningen. Der vil du også finne eksempler på hvordan kompensasjonen blir beregnet.
+{{/if}}
 
 {{> frisinn-footer }}

@@ -7,6 +7,7 @@
   "required": [
     "felles",
     "etterbetaling",
+    "feilutbetaling",
     "periode",
     "soknadskombinasjon",
     "beregningsgrunnlag",
@@ -19,6 +20,9 @@
       "type": "object"
     },
     "etterbetaling": {
+      "type": ["number", "null"]
+    },
+    "feilutbetaling": {
       "type": ["number", "null"]
     },
     "periode": {
@@ -44,6 +48,9 @@
     },
     "soktOmFrilansUtenFrilansinntekt": {
       "type": "boolean"
+    },
+    "redusertUtbetalingAarsaker": {
+      "type": ["object", "null"]
     }
   }
 }
