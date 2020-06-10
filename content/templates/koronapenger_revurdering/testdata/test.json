@@ -33,6 +33,7 @@
     "harEndretSoknadsperioden": true,
     "soknadGjelderIkkeLengerFL": true,
     "soknadGjelderIkkeLengerSN": true,
-    "harEndretInntektISoknadsperioden": true
+    "harEndretInntektISoknadsperioden": true,
+    "flertall": true
   }
 }
