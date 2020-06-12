@@ -35,16 +35,13 @@
       "type": "object"
     },
     "beregningsgrunnlag": {
-      "type": "number"
+      "type": ["number", "null"]
     },
     "opprettholdtInntekt": {
       "type": ["number", "null"]
     },
     "månedsbeløp": {
       "type": "number"
-    },
-    "måned": {
-      "type": "string"
     },
     "soktOmFrilansUtenFrilansinntekt": {
       "type": "boolean"
