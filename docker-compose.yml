@@ -3,7 +3,7 @@ services:
   dokgen:
     build: .
     container_name: dokgen_dev
-    image: navikt/dokgen:latest
+    image: navikt/k9-dokgen:latest
     ports:
       - "8291:8080"
     volumes:
