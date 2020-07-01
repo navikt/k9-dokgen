@@ -11,15 +11,11 @@
     "beregningsgrunnlag",
     "opprettholdtInntekt",
     "månedsbeløp",
-    "soktOmFrilansUtenFrilansinntekt",
-    "total"
+    "soktOmFrilansUtenFrilansinntekt"
   ],
   "properties": {
     "felles": {
       "type": "object"
-    },
-    "endring": {
-      "type": ["number", "null"]
     },
     "periode": {
       "type": "object"
@@ -44,9 +40,6 @@
     },
     "soktOmFrilansUtenFrilansinntekt": {
       "type": "boolean"
-    },
-    "total": {
-      "type": "number"
     }
   }
 }

@@ -29,9 +29,6 @@
     },
     "måned": {
       "type": "string"
-    },
-    "etterbetaling": {
-      "type": ["number", "null"]
     }
   }
 }
