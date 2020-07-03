@@ -18,6 +18,9 @@
     "inntektLavereEnn0_75g": {
       "type": "boolean"
     },
+    "inntektHøyereEnn6g": {
+      "type": "boolean"
+    },
     "høyInntektISøknadsperiode": {
       "type": "boolean"
     },
