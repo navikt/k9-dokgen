@@ -21,6 +21,9 @@
     "inntektHøyereEnn6g": {
       "type": "boolean"
     },
+    "høyInntektISøknadsperiode": {
+      "type": "boolean"
+    },
     "annenInntektHøyereEnn6g": {
       "type": "boolean"
     },
