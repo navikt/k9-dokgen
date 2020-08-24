@@ -36,7 +36,7 @@ jobs:
 
       - name: Oppdater kommentar med deployment status ved feil
         if: failure()
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_ACCESS_TOKEN}}
           script: |
@@ -48,7 +48,7 @@ jobs:
                                     body: 'promote til ${{ github.event.client_payload.slash_command.args }} feilet'})
       - name: Oppdater kommentar med deployment status
         if: success()
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
