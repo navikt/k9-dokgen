@@ -27,9 +27,6 @@ spec:
     requests:
       cpu: 200m
       memory: 256Mi
-  prometheus:
-    enabled: true
-    path: /internal/prometheus
   ingresses:
   {{#each ingresses as |url|}}
      - {{url}}
