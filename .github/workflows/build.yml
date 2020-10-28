@@ -41,7 +41,7 @@ jobs:
           mvn deploy -e --settings ./.m2/settings.xml --file build -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
         env:
           GITHUB_USERNAME: x-access-token
-          GITHUB_PASSWORD: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          GITHUB_PASSWORD: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
 
       - name: Opprett deployment issue
         if: success()
@@ -62,6 +62,6 @@ jobs:
         if: success()
         uses: peter-evans/create-or-update-comment@v1
         with:
-          token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
           issue-number: ${{ steps.createdeployissue.outputs.number }}
           body: /promote ${{ env.TAG }} dev-fss q1
