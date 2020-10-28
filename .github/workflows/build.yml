@@ -18,6 +18,9 @@ jobs:
       - name: Sjekk ut kode
         uses: actions/checkout@v2
 
+      - name: Logger inn i Docker packages
+        run : echo  ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
+
       - name: Test med up.sh
         run: chmod +x *.sh && ./up.sh
 
@@ -29,7 +32,6 @@ jobs:
 
       - name: Bygg, tag og push Docker image
         run: |
-          echo  ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
           docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest .
 
           docker push ${IMAGE_BASE}:latest
