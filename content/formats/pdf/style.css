@@ -13,13 +13,11 @@ html {
 body{
     padding: 10mm;
     margin: 0;
-    border: 1px solid black;
     position: relative;
 }
 
 #content {
     margin: 0.5rem;
-    border: 1px solid black;
 }
 
 #header {
