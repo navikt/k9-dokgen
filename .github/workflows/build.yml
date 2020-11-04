@@ -25,10 +25,10 @@ jobs:
         run: chmod +x *.sh && ./up.sh
 
       - name: Hent tag
-        run: echo "::set-env name=TAG::$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)"
+        run: echo "TAG=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
       - name: Lag image-navn
-        run: echo "::set-env name=IMAGE::$IMAGE_BASE:$TAG"
+        run: echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
 
       - name: Bygg, tag og push Docker image
         run: |
