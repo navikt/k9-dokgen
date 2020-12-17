@@ -1,0 +1,9 @@
+{{#if felles.mottaker.bruker}}
+Navn: {{felles.søkerNavn}}
+<br/>
+Fødselsnummer: {{felles.søkerPersonnummer}}
+{{else}}
+{{#if felles.mottaker.navn}}{{felles.mottaker.navn}}{{/if}}
+<br/>
+{{#if felles.mottaker.id}}{{felles.mottaker.id}}{{/if}}
+{{/if}}

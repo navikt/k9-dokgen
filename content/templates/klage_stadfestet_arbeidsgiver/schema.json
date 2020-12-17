@@ -10,8 +10,7 @@
   "properties": {
     "felles": {
       "required": [
-        "søkerNavn",
-        "søkerPersonnummer",
+        "mottaker",
         "brevDato",
         "fritekst",
         "erVurdertAvNK"
@@ -23,6 +22,23 @@
         "søkerPersonnummer": {
           "type": "string"
         },
+        "mottaker": {
+          "properties": {
+            "arbeidsgiver": {
+              "type": "boolean"
+            },
+            "bruker": {
+              "type": "boolean"
+            },
+            "navn": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+
         "brevDato": {
           "type": "string"
         },
