@@ -1,12 +1,18 @@
 {
+  "søkerFødselsdato": "30.02.1975",
   "felles": {
     "søkerNavn": "Selv Sjeler",
-    "søkerPersonnummer": "300220 12345",
     "brevDato": "1. mai 2020",
-    "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
-    "erVurdertAvNK": false
+    "fritekst": "Vi mener at dere forklart med denne friteksten har fått medhold",
+    "erVurdertAvNK": true,
+    "mottaker": {
+      "arbeidsgiver": true,
+      "bruker": false,
+      "navn": "Arbeidsgiver AS",
+      "id": "123456789"
+    }
   },
-  "ytelse": "inntektkompensasjon for frilans og selvstendig næringsdrivende",
+  "ytelse": "refusjon av omsorgspenger ",
   "mottattDato": "15. mars 2020",
   "erOpphevet": true
 }
