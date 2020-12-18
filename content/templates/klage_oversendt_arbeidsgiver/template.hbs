@@ -1,11 +1,12 @@
-{{> frisinn-header }}
+{{> felles/adressatdetaljer }}
 
-## Vi har sendt saken din til NAV Klageinstans
+## Vi har sendt saken til NAV Klageinstans
+{{> felles-klage-arbeidsgiver/gjelder }}
 
-Vi har mottatt klagen din på vedtaket om {{ytelse}} {{mottattDato}}, og kommet fram til at det ikke endres. NAV Klageinstans skal derfor vurdere saken din på nytt.
+Vi har mottatt klagen på vedtaket om {{ytelse}} {{mottattDato}}, og kommet fram til at det ikke endres. NAV Klageinstans skal derfor vurdere saken på nytt.
 
 
-Saksbehandlingstiden er vanligvis under 4 uker.
+Saksbehandlingstiden er vanligvis under 12 uker.
 
 
 ### Dette har vi lagt vekt på i vurderingen vår
@@ -15,6 +16,6 @@ Saksbehandlingstiden er vanligvis under 4 uker.
 <br/>
 
 
-Har du nye opplysninger eller ønsker å uttale deg, kan du sende dette via nav.no/klage. Velg NAV-enhet: NAV Klageinstans Midt-Norge.
+Har dere nye opplysninger eller ønsker å uttale dere, kan dere sende dette via [nav.no/klage](https//nav.no/klage). Velg NAV-enhet: NAV Klageinstans Nord.
 
-{{> klage-footer }}
+{{> felles-klage-arbeidsgiver/footer klageinstans=false}}
