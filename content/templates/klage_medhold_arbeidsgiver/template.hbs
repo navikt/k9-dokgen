@@ -1,11 +1,12 @@
-{{> frisinn-header }}
+{{> felles/adressatdetaljer }}
 
-## NAV har omgjort vedtaket ditt om {{ytelse}}
+## NAV har omgjort vedtaket om {{ytelse}}
+{{> felles-klage-arbeidsgiver/gjelder }}
 
 {{#if felles.erVurdertAvNK}}
-Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser må  gjøres om.
+Etter at dere klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser må  gjøres om.
 {{else}}
-Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at vedtaket ditt må gjøres om.
+Etter at dere klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket må gjøres om.
 {{/if}}
 
 ### Dette har vi lagt vekt på i vurderingen vår
@@ -13,8 +14,16 @@ Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at 
 {{felles.fritekst}}
 
 
+### Dere må melde fra om endringer
+Dersom det skjer endringer som kan ha betydning for stønaden som utbetales, må dere straks melde fra til NAV. Dere finner mer informasjon på [nav.no/rettogplikt](https://nav.no/rettogplikt).
 
-### Du har rett til å klage
-Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner informasjon om hvordan du går frem på [nav.no/klage](https://nav.no/klage).
+{{#if felles.erVurdertAvNK}}
+### Dere har rett til å anke
+Dere kan anke vedtaket til Trygderetten. Fristen er 12 uker fra den datoen vedtaket kom fram til dere.
+Klagerettighetene og skjema for klage/anke finner dere på [nav.no/klage](https://nav.no/klage).
+{{else}}
+### Dere har rett til å klage
+Dere kan klage innen 6 uker fra den datoen dere mottok vedtaket. dere finner informasjon om hvordan dere går frem på [nav.no/klage](https://nav.no/klage).
+{{/if}}
 
-{{> klage-footer }}
+{{> felles-klage-arbeidsgiver/footer klageinstans=felles.erVurdertAvNK}}
