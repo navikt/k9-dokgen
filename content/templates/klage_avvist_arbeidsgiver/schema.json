@@ -5,7 +5,8 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "felles"
+    "felles",
+    "søkerFødselsdato"
   ],
   "properties": {
     "felles": {
@@ -33,6 +34,9 @@
       "type": "boolean"
     },
     "hjemler": {
+      "type": "string"
+    },
+    "søkerFødselsdato": {
       "type": "string"
     }
   }

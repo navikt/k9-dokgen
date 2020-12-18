@@ -40,7 +40,6 @@
             }
           }
         },
-
         "brevDato": {
           "type": "string"
         },
@@ -53,6 +52,9 @@
       }
     },
     "ytelse": {
+      "type": "string"
+    },
+    "søkerFødselsdato": {
       "type": "string"
     }
   }

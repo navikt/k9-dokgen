@@ -1,31 +1,31 @@
-{{> frisinn-header }}
+{{> felles/adressatdetaljer }}
 
-## NAV har avvist klagen din på vedtaket om {{ytelse}}
+## NAV har avvist klagen på vedtaket om {{ytelse}}
+{{> felles-klage-arbeidsgiver/gjelder }}
 
 {{#if aarsakKlagetForSent}}
-Vi har avvist klagen din fordi du har klaget for sent. Du har ikke oppgitt en grunn til at du klaget for sent som gjør at vi kan behandle klagen.
+Vi har avvist klagen fordi dere har klaget for sent. Dere har ikke oppgitt en grunn til at dere klaget for sent som gjør at vi kan behandle klagen.
 {{/if}}
 
 {{#if aarsakManglerUnderskrift}}
-Vi har avvist klagen din fordi du ikke har underskrevet den.
+Vi har avvist klagen fordi dere ikke har underskrevet den.
 {{/if}}
 
 {{#if aarsakIkkeEtVedtak}}
-Vi har avvist klagen fordi det du har klaget på ikke er et vedtak.
+Vi har avvist klagen fordi det dere har klaget på ikke er et vedtak.
 {{/if}}
 
 {{#if aarsakVedtakGjelderIkkePart}}
-Vi har avvist klagen fordi du har klaget på et vedtak som ikke gjelder deg.
+Vi har avvist klagen fordi dere har klaget på et vedtak som ikke gjelder dere.
 {{/if}}
 
 {{#if aarsakManglerKlagegrunn}}
-Vi har avvist klagen fordi du ikke har sagt hva det er du klager på.
+Vi har avvist klagen fordi dere ikke har sagt hva det er dere klager på.
 {{/if}}
 
 {{hjemler}}
 
+### Dere har rett til å klage
+Dere kan klage innen 6 uker fra den datoen dere mottok vedtaket. Dere finner skjema og informasjon på [nav.no/klage](https://nav.no/klage).
 
-### Du har rett til å klage
-Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner informasjon om hvordan du går frem på [nav.no/klage](https://nav.no/klage).
-
-{{> klage-footer }}
+{{> felles-klage-arbeidsgiver/footer klageinstans=felles.erVurdertAvNK}}
