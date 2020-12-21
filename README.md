@@ -20,5 +20,9 @@ script for å manuelt deploye til miljøene.
 
 Basert på denne: https://doc.nais.io/deployment/manual
 
+### Lokal testing
+kjør med spring profilen dev for å aktivere redigering i test:
+`SPRING_PROFILES_ACTIVE=dev docker-compose -p dokgen_dev_interactive up --build`
+
 ### Up
 Enkel test for å se om docker-imaget kan bygges og starter riktig i containeren.

@@ -1,0 +1,23 @@
+{
+  "søkerFødselsdato": "30.02.1975",
+  "felles": {
+    "søkerNavn": "Selv Sjeler",
+    "søkerPersonnummer": "300220 12345",
+    "brevDato": "1. mai 2020",
+    "erVurdertAvNK": false,
+    "mottaker": {
+      "arbeidsgiver": true,
+      "bruker": false,
+      "navn": "Arbeidsgiver AS",
+      "id": "123456789"
+    }
+  },
+  "ytelse": "inntektkompensasjon for frilans og selvstendig næringsdrivende",
+  "avdeling": "NAV",
+  "aarsakKlagetForSent": true,
+  "aarsakManglerUnderskrift": true,
+  "aarsakIkkeEtVedtak": true,
+  "aarsakVedtakGjelderIkkePart": true,
+  "aarsakManglerKlagegrunn": true,
+  "hjemler": "Vedtaket er gjort etter folketrygdloven § 21-12 og forvaltningsloven §§ 31 og 34."
+}
