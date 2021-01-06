@@ -5,8 +5,7 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "felles",
-    "søkerFødselsdato"
+    "felles"
   ],
   "properties": {
     "felles": {
@@ -15,13 +14,14 @@
         "mottaker",
         "brevDato",
         "fritekst",
-        "erVurdertAvNK"
+        "erVurdertAvNK",
+        "søkerId"
       ],
       "properties": {
         "søkerNavn": {
           "type": "string"
         },
-        "søkerPersonnummer": {
+        "søkerId": {
           "type": "string"
         },
         "mottaker": {
@@ -52,9 +52,6 @@
       }
     },
     "ytelse": {
-      "type": "string"
-    },
-    "søkerFødselsdato": {
       "type": "string"
     }
   }
