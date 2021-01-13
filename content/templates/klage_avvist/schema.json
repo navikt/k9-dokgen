@@ -17,6 +17,9 @@
     "avdeling": {
       "type": "string"
     },
+    "flereÅrsaker": {
+      "type": "boolean"
+    },
     "aarsakKlagetForSent": {
       "type": "boolean"
     },

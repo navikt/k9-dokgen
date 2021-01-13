@@ -2,28 +2,45 @@
 
 ## NAV har avvist klagen din på vedtaket om {{ytelse}}
 
+{{#if flereÅrsaker}}
+
+Vi har avvist klagen din fordi
+{{#if aarsakKlagetForSent}}
+* du har klaget for sent. Du har ikke oppgitt en grunn til at du klaget for sent som gjør at vi kan behandle klagen
+{{/if}}
+{{#if aarsakManglerUnderskrift}}
+* du ikke har underskrevet den
+{{/if}}
+{{#if aarsakIkkeEtVedtak}}
+* det du har klaget på ikke er et vedtak
+{{/if}}
+{{#if aarsakVedtakGjelderIkkePart}}
+* du har klaget på et vedtak som ikke gjelder deg
+{{/if}}
+{{#if aarsakManglerKlagegrunn}}
+* du ikke har sagt hva det er du klager på
+{{/if}}
+
+{{else}}
+
 {{#if aarsakKlagetForSent}}
 Vi har avvist klagen din fordi du har klaget for sent. Du har ikke oppgitt en grunn til at du klaget for sent som gjør at vi kan behandle klagen.
 {{/if}}
-
 {{#if aarsakManglerUnderskrift}}
 Vi har avvist klagen din fordi du ikke har underskrevet den.
 {{/if}}
-
 {{#if aarsakIkkeEtVedtak}}
 Vi har avvist klagen fordi det du har klaget på ikke er et vedtak.
 {{/if}}
-
 {{#if aarsakVedtakGjelderIkkePart}}
 Vi har avvist klagen fordi du har klaget på et vedtak som ikke gjelder deg.
 {{/if}}
-
 {{#if aarsakManglerKlagegrunn}}
 Vi har avvist klagen fordi du ikke har sagt hva det er du klager på.
 {{/if}}
+{{/if}}
 
 {{hjemler}}
-
 
 ### Du har rett til å klage
 Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner informasjon om hvordan du går frem på [nav.no/klage](https://nav.no/klage).

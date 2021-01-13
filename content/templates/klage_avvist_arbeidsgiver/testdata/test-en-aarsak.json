@@ -14,11 +14,11 @@
   },
   "ytelse": "inntektkompensasjon for frilans og selvstendig næringsdrivende",
   "avdeling": "NAV",
-  "flereÅrsaker": true,
-  "aarsakKlagetForSent": true,
-  "aarsakManglerUnderskrift": true,
-  "aarsakIkkeEtVedtak": true,
-  "aarsakVedtakGjelderIkkePart": true,
+  "flereÅrsaker": false,
+  "aarsakKlagetForSent": false,
+  "aarsakManglerUnderskrift": false,
+  "aarsakIkkeEtVedtak": false,
+  "aarsakVedtakGjelderIkkePart": false,
   "aarsakManglerKlagegrunn": true,
   "hjemler": "Vedtaket er gjort etter folketrygdloven § 21-12 og forvaltningsloven §§ 31 og 34."
 }
