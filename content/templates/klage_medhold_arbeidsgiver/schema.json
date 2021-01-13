@@ -53,6 +53,9 @@
     },
     "ytelse": {
       "type": "string"
+    },
+    "kanMeldeFraOmEndringer": {
+      "type": "boolean"
     }
   }
 }

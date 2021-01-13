@@ -13,9 +13,10 @@ Etter at dere klaget har vi vurdert saken på nytt. Vi har kommet fram til at ve
 
 {{felles.fritekst}}
 
-
+{{#if kanMeldeFraOmEndringer}}
 ### Dere må melde fra om endringer
 Dersom det skjer endringer som kan ha betydning for stønaden som utbetales, må dere straks melde fra til NAV. Dere finner mer informasjon på [nav.no/rettogplikt](https://nav.no/rettogplikt).
+{{/if}}
 
 {{#if felles.erVurdertAvNK}}
 ### Dere har rett til å anke
@@ -23,7 +24,7 @@ Dere kan anke vedtaket til Trygderetten. Fristen er 12 uker fra den datoen vedta
 Klagerettighetene og skjema for klage/anke finner dere på [nav.no/klage](https://nav.no/klage).
 {{else}}
 ### Dere har rett til å klage
-Dere kan klage innen 6 uker fra den datoen dere mottok vedtaket. dere finner informasjon om hvordan dere går frem på [nav.no/klage](https://nav.no/klage).
+Dere kan klage innen 6 uker fra den datoen dere mottok vedtaket. Dere finner informasjon om hvordan dere går frem på [nav.no/klage](https://nav.no/klage).
 {{/if}}
 
 {{> felles-klage-arbeidsgiver/footer klageinstans=felles.erVurdertAvNK}}
