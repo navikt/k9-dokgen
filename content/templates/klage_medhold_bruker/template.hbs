@@ -1,0 +1,27 @@
+{{> felles/adressatdetaljer }}
+
+## NAV har omgjort vedtaket om {{ytelse}}
+{{> felles-klage-arbeidsgiver/gjelder }}
+
+{{#if felles.erVurdertAvNK}}
+Etter at dere klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser gjøres om.
+{{else}}
+Etter at dere klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket gjøres om.
+{{/if}}
+
+### Dette har vi lagt vekt på i vurderingen vår
+
+{{felles.fritekst}}
+
+{{#if kanMeldeFraOmEndringer}}
+### Dere må melde fra om endringer
+Dersom det skjer endringer som kan ha betydning for stønaden som utbetales, må dere straks melde fra til NAV. Dere finner mer informasjon på [nav.no/rettogplikt](https://nav.no/rettogplikt).
+{{/if}}
+
+{{#if felles.erVurdertAvNK}}
+{{> felles-klage-arbeidsgiver/ankerett}}
+{{else}}
+{{> felles-klage-arbeidsgiver/klagerett}}
+{{/if}}
+
+{{> felles-klage-arbeidsgiver/footer klageinstans=felles.erVurdertAvNK}}

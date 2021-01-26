@@ -1,0 +1,48 @@
+{{> felles/adressatdetaljer }}
+
+## NAV har avvist klagen på vedtaket om {{ytelse}}
+{{> felles-klage-arbeidsgiver/gjelder }}
+
+{{#if flereÅrsaker}}
+
+Vi har avvist klagen fordi
+{{#if aarsakKlagetForSent}}
+* dere har klaget for sent. Dere har ikke oppgitt en grunn til at dere klaget for sent som gjør at vi kan behandle klagen.
+{{/if}}
+{{#if aarsakManglerUnderskrift}}
+* dere ikke har underskrevet den
+{{/if}}
+{{#if aarsakIkkeEtVedtak}}
+* det dere har klaget på ikke er et vedtak
+{{/if}}
+{{#if aarsakVedtakGjelderIkkePart}}
+* dere har klaget på et vedtak som ikke gjelder dere
+{{/if}}
+{{#if aarsakManglerKlagegrunn}}
+* dere ikke har sagt hva dere klager på
+{{/if}}
+
+{{else}}
+
+{{#if aarsakKlagetForSent}}
+Vi har avvist klagen fordi dere har klaget for sent. Dere har ikke oppgitt en grunn til at dere klaget for sent som gjør at vi kan behandle klagen.
+{{/if}}
+{{#if aarsakManglerUnderskrift}}
+Vi har avvist klagen fordi dere ikke har underskrevet den.
+{{/if}}
+{{#if aarsakIkkeEtVedtak}}
+Vi har avvist klagen fordi det dere har klaget på ikke er et vedtak.
+{{/if}}
+{{#if aarsakVedtakGjelderIkkePart}}
+Vi har avvist klagen fordi dere har klaget på et vedtak som ikke gjelder dere.
+{{/if}}
+{{#if aarsakManglerKlagegrunn}}
+Vi har avvist klagen fordi dere ikke har sagt hva dere klager på.
+{{/if}}
+{{/if}}
+
+{{hjemler}}
+
+{{> felles-klage-arbeidsgiver/klagerett}}
+
+{{> felles-klage-arbeidsgiver/footer klageinstans=felles.erVurdertAvNK}}
