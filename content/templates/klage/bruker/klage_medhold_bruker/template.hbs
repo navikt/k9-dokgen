@@ -1,7 +1,7 @@
 {{> felles/adressatdetaljer }}
 
 ## NAV har omgjort vedtaket om {{ytelse}}
-{{> felles-klage-arbeidsgiver/gjelder }}
+{{> klage/bruker/felles/gjelder }}
 
 {{#if felles.erVurdertAvNK}}
 Etter at du klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser gjøres om.
@@ -19,9 +19,9 @@ Dersom det skjer endringer som kan ha betydning for stønaden som utbetales, må
 {{/if}}
 
 {{#if felles.erVurdertAvNK}}
-{{> felles-klage-arbeidsgiver/ankerett}}
+{{> klage/bruker/felles/ankerett}}
 {{else}}
-{{> felles-klage-arbeidsgiver/klagerett}}
+{{> klage/bruker/felles/klagerett}}
 {{/if}}
 
-{{> felles-klage-arbeidsgiver/footer klageinstans=felles.erVurdertAvNK}}
+{{> klage/bruker/felles/footer klageinstans=felles.erVurdertAvNK}}
