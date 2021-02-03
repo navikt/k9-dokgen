@@ -1,3 +1,3 @@
-FROM docker.pkg.github.com/navikt/dokgen/dokgen:1da1b34d611d75f2d051dd31c1b575a04046feb9
+FROM docker.pkg.github.com/navikt/dokgen/dokgen:60faed8a6685937ac56e99e2303239838f78d052
 ENV ALLOW_ENCODED_SLASH=true
 COPY content content
