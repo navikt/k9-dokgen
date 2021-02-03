@@ -1,9 +1,16 @@
+<div style="margin-top: -25mm; min-height: 20mm;">
 {{#if felles.mottaker.bruker}}
-Navn: {{felles.mottaker.navn}}
-<br/>
-Fødselsnummer: {{felles.mottaker.id}}
+<div class="uten-mellomrom">
+    <p>Til: {{felles.mottaker.navn}}</p>
+    <p>Fødselsnummer: {{felles.mottaker.id}}</p>
+</div>
 {{else}}
-{{#if felles.mottaker.navn}}{{felles.mottaker.navn}}{{/if}}
-<br/>
-{{#if felles.mottaker.id}}{{felles.mottaker.id}}{{/if}}
+<div class="uten-mellomrom">
+    {{#if felles.mottaker.navn}}<p>{{felles.mottaker.navn}}</p>{{/if}}
+    {{#if felles.mottaker.id}}<p>{{felles.mottaker.id}}</p>{{/if}}
+</div>
+<div style="font-style: italic; font-size: small;">
+    <p>Gjelder: {{felles.gjelder.navn}}, {{felles.gjelder.fødselsdato}}.</p>
+</div>
 {{/if}}
+</div>
