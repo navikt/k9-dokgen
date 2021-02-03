@@ -6,8 +6,8 @@
     "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
     "erVurdertAvNK": false,
     "mottaker": {
-      "arbeidsgiver": true,
-      "bruker": false,
+      "arbeidsgiver": false,
+      "bruker": true,
       "navn": "Arbeidsgiver AS",
       "id": "123456789"
     }
