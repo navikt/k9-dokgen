@@ -17,12 +17,6 @@
         "erVurdertAvNK"
       ],
       "properties": {
-        "søkerNavn": {
-          "type": "string"
-        },
-        "søkerId": {
-          "type": "string"
-        },
         "mottaker": {
           "required": [
             "bruker",

@@ -10,20 +10,12 @@
   "properties": {
     "felles": {
       "required": [
-        "søkerNavn",
         "mottaker",
         "brevDato",
         "fritekst",
-        "erVurdertAvNK",
-        "søkerId"
+        "erVurdertAvNK"
       ],
       "properties": {
-        "søkerNavn": {
-          "type": "string"
-        },
-        "søkerId": {
-          "type": "string"
-        },
         "mottaker": {
           "required": [
             "navn",
