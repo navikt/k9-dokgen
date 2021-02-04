@@ -3,16 +3,13 @@
     "brevDato": "1. mai 2020",
     "erVurdertAvNK": false,
     "mottaker": {
-      "arbeidsgiver": true,
-      "bruker": false,
-      "navn": "Arbeidsgiver AS",
-      "id": "123456789"
-    },
-    "gjelder": {
+      "arbeidsgiver": false,
+      "bruker": true,
       "navn": "Selv Sjeler",
-      "fødselsdato": "30.02.1975"
+      "id": "300220 12345"
     },
-    "fritekst": "Vi mener at dere forklart med denne friteksten har fått medhold"
+    "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
+    "søkerId": "30.02.1975"
   },
   "ytelse": "refusjon  av omsorgspenger",
   "avdeling": "NAV",

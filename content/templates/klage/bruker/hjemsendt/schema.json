@@ -5,17 +5,16 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "felles"
+    "felles",
+    "erOpphevet"
   ],
   "properties": {
     "felles": {
       "required": [
-        "søkerNavn",
         "mottaker",
         "brevDato",
         "fritekst",
-        "erVurdertAvNK",
-        "søkerId"
+        "erVurdertAvNK"
       ],
       "properties": {
         "søkerNavn": {
@@ -26,9 +25,9 @@
         },
         "mottaker": {
           "required": [
+            "bruker",
             "navn",
-            "id",
-            "arbeidsgiver"
+            "id"
           ],
           "properties": {
             "arbeidsgiver": {
@@ -45,23 +44,7 @@
             }
           }
         },
-        "gjelder": {
-          "required": [
-            "navn",
-            "fødselsdato"
-          ],
-          "properties": {
-            "navn": {
-              "type": "string"
-            },
-            "id": {
-              "type": "string"
-            },
-            "fødselsdato": {
-              "type": "string"
-            }
-          }
-        },
+
         "brevDato": {
           "type": "string"
         },
@@ -75,6 +58,12 @@
     },
     "ytelse": {
       "type": "string"
+    },
+    "avdeling": {
+      "type": "string"
+    },
+    "erOpphevet": {
+      "type": "boolean"
     }
   }
 }

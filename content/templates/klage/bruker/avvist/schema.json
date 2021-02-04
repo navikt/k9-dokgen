@@ -10,12 +10,10 @@
   "properties": {
     "felles": {
       "required": [
-        "søkerNavn",
         "mottaker",
         "brevDato",
         "fritekst",
-        "erVurdertAvNK",
-        "søkerId"
+        "erVurdertAvNK"
       ],
       "properties": {
         "søkerNavn": {
@@ -28,7 +26,7 @@
           "required": [
             "navn",
             "id",
-            "arbeidsgiver"
+            "bruker"
           ],
           "properties": {
             "arbeidsgiver": {
@@ -45,23 +43,7 @@
             }
           }
         },
-        "gjelder": {
-          "required": [
-            "navn",
-            "fødselsdato"
-          ],
-          "properties": {
-            "navn": {
-              "type": "string"
-            },
-            "id": {
-              "type": "string"
-            },
-            "fødselsdato": {
-              "type": "string"
-            }
-          }
-        },
+
         "brevDato": {
           "type": "string"
         },
@@ -74,6 +56,30 @@
       }
     },
     "ytelse": {
+      "type": "string"
+    },
+    "avdeling": {
+      "type": "string"
+    },
+    "flereÅrsaker": {
+      "type": "boolean"
+    },
+    "aarsakKlagetForSent": {
+      "type": "boolean"
+    },
+    "aarsakManglerUnderskrift": {
+      "type": "boolean"
+    },
+    "aarsakIkkeEtVedtak": {
+      "type": "boolean"
+    },
+    "aarsakVedtakGjelderIkkePart": {
+      "type": "boolean"
+    },
+    "aarsakManglerKlagegrunn": {
+      "type": "boolean"
+    },
+    "hjemler": {
       "type": "string"
     }
   }

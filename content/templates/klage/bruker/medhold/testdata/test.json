@@ -1,0 +1,16 @@
+{
+  "felles": {
+    "brevDato": "1. mai 2020",
+    "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
+    "erVurdertAvNK": false,
+    "mottaker": {
+      "arbeidsgiver": false,
+      "bruker": true,
+      "navn": "Selv Sjeler",
+      "id": "300220 12345"
+    }
+  },
+  "ytelse": "refusjon  av omsorgspenger",
+  "mottattDato": "15. mars 2020",
+  "kanMeldeFraOmEndringer": false
+}

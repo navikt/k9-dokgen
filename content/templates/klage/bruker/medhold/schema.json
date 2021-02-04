@@ -10,12 +10,10 @@
   "properties": {
     "felles": {
       "required": [
-        "søkerNavn",
         "mottaker",
         "brevDato",
         "fritekst",
-        "erVurdertAvNK",
-        "søkerId"
+        "erVurdertAvNK"
       ],
       "properties": {
         "søkerNavn": {
@@ -26,9 +24,9 @@
         },
         "mottaker": {
           "required": [
+            "bruker",
             "navn",
-            "id",
-            "arbeidsgiver"
+            "id"
           ],
           "properties": {
             "arbeidsgiver": {
@@ -41,23 +39,6 @@
               "type": "string"
             },
             "id": {
-              "type": "string"
-            }
-          }
-        },
-        "gjelder": {
-          "required": [
-            "navn",
-            "fødselsdato"
-          ],
-          "properties": {
-            "navn": {
-              "type": "string"
-            },
-            "id": {
-              "type": "string"
-            },
-            "fødselsdato": {
               "type": "string"
             }
           }
@@ -75,6 +56,9 @@
     },
     "ytelse": {
       "type": "string"
+    },
+    "kanMeldeFraOmEndringer": {
+      "type": "boolean"
     }
   }
 }
