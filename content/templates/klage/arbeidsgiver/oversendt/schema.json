@@ -1,0 +1,80 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "felles"
+  ],
+  "properties": {
+    "felles": {
+      "required": [
+        "søkerNavn",
+        "mottaker",
+        "brevDato",
+        "fritekst",
+        "erVurdertAvNK",
+        "søkerId"
+      ],
+      "properties": {
+        "søkerNavn": {
+          "type": "string"
+        },
+        "søkerId": {
+          "type": "string"
+        },
+        "mottaker": {
+          "required": [
+            "navn",
+            "id",
+            "arbeidsgiver"
+          ],
+          "properties": {
+            "arbeidsgiver": {
+              "type": "boolean"
+            },
+            "bruker": {
+              "type": "boolean"
+            },
+            "navn": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "gjelder": {
+          "required": [
+            "navn",
+            "fødselsdato"
+          ],
+          "properties": {
+            "navn": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "fødselsdato": {
+              "type": "string"
+            }
+          }
+        },
+        "brevDato": {
+          "type": "string"
+        },
+        "fritekst": {
+          "type": "string"
+        },
+        "erVurdertAvNK": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ytelse": {
+      "type": "string"
+    }
+  }
+}

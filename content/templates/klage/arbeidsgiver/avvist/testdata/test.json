@@ -1,0 +1,26 @@
+{
+  "felles": {
+    "brevDato": "1. mai 2020",
+    "erVurdertAvNK": false,
+    "mottaker": {
+      "arbeidsgiver": true,
+      "bruker": false,
+      "navn": "Arbeidsgiver AS",
+      "id": "123456789"
+    },
+    "gjelder": {
+      "navn": "Selv Sjeler",
+      "fødselsdato": "30.02.1975"
+    },
+    "fritekst": "Vi mener at dere forklart med denne friteksten har fått medhold"
+  },
+  "ytelse": "refusjon av omsorgspenger",
+  "avdeling": "NAV",
+  "flereÅrsaker": true,
+  "aarsakKlagetForSent": true,
+  "aarsakManglerUnderskrift": true,
+  "aarsakIkkeEtVedtak": true,
+  "aarsakVedtakGjelderIkkePart": true,
+  "aarsakManglerKlagegrunn": true,
+  "hjemler": "Vedtaket er gjort etter folketrygdloven § 21-12 og forvaltningsloven §§ 31 og 34."
+}
