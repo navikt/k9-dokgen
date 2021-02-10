@@ -1,8 +1,16 @@
 {
   "felles": {
-    "søkerNavn": "Selv Sjeler",
-    "søkerPersonnummer": "300220 12345",
-    "brevDato": "1. mai 2020"
+    "brevDato": "1. mai 2020",
+    "mottaker": {
+      "arbeidsgiver": false,
+      "bruker": true,
+      "navn": "Selv Sjeler",
+      "id": "30027512345"
+    },
+    "gjelder": {
+      "navn": "Selv Sjeler",
+      "id": "30027512345"
+    }
   },
   "soknadskombinasjon": {
     "sn": true,
