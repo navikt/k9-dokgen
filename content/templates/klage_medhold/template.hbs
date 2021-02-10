@@ -1,6 +1,10 @@
 {{> frisinn-header }}
 
+{{#if delvisMedhold}}
+## NAV har delvis omgjort vedtaket ditt om {{ytelse}}
+{{else}}
 ## NAV har omgjort vedtaket ditt om {{ytelse}}
+{{/if}}
 
 {{#if felles.erVurdertAvNK}}
 Etter at du klaget har vi vurdert saken din på nytt. Vi har kommet fram til at vedtaket til NAV Familie- og pensjonsytelser må  gjøres om.

@@ -1,6 +1,10 @@
 {{> felles/adressatdetaljer }}
 
+{{#if delvisMedhold}}
+## NAV har delvis omgjort vedtaket ditt om {{ytelse}}
+{{else}}
 ## NAV har omgjort vedtaket ditt om {{ytelse}}
+{{/if}}
 
 {{#if felles.erVurdertAvNK}}
 Etter at du klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser gjøres om.
