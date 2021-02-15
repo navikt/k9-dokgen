@@ -11,19 +11,11 @@
   "properties": {
     "felles": {
       "required": [
-        "søkerNavn",
-        "søkerPersonnummer",
         "brevDato",
         "fritekst",
         "erVurdertAvNK"
       ],
       "properties": {
-        "søkerNavn": {
-          "type": "string"
-        },
-        "søkerPersonnummer": {
-          "type": "string"
-        },
         "brevDato": {
           "type": "string"
         },
