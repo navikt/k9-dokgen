@@ -67,6 +67,9 @@
     },
     "ytelse": {
       "type": "string"
+    },
+    "delvisMedhold": {
+      "type": "boolean"
     }
   }
 }

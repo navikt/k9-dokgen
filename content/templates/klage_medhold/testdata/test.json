@@ -14,5 +14,6 @@
     "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
     "erVurdertAvNK": true
   },
-  "ytelse": "inntektkompensasjon for frilans og selvstendig næringsdrivende"
+  "ytelse": "inntektkompensasjon for frilans og selvstendig næringsdrivende",
+  "delvisMedhold": true
 }
