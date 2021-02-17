@@ -58,3 +58,62 @@ jobs:
             github.issues.createComment({...issue,
                                     body: 'promote til ${{ github.event.client_payload.slash_command.args }} utført'})
             github.issues.addLabels({...issue, labels: ['deployment','${{ env.CLUSTER }}-${{ env.NAMESPACE }}']})
+      - name: Klargjør for å tagge prodsatt commit
+        if: success() && env.CLUSTER == 'prod-fss'
+        run: |
+          echo "NOW=$(TZ=Europe/Oslo date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
+          echo "COMMIT_SHA=$(git rev-parse ${{ env.TAG }})" >> $GITHUB_ENV
+      - name: Tagg prodsatt commit
+        if: success() && env.CLUSTER == 'prod-fss'
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const latestName = "PROD"
+            const tagName = "PROD_${{ env.NOW }}"
+            console.log("lager tagg=" + tagName)
+            github.git.createRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: 'refs/tags/' + tagName,
+                sha: "${{ env.COMMIT_SHA }}"
+            }).then((res) => {
+                console.log("laget tagg=" + tagName)
+            })
+
+            const latestRef = 'tags/' + latestName
+            console.log("ser om tagg="+ latestRef + " finnes...")
+            try {
+              let previous = await github.git.getRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: latestRef,
+              })
+              console.log(latestRef + " finnes! sletter...")
+
+              let slettet = await github.git.deleteRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: latestRef,
+              })
+
+              console.log("slettet gamle " + latestName)
+
+            } catch(err) {
+              if (err.status == 404) {
+                console.log("fant ikke ref " + latestRef)
+              } else {
+                console.log(err)
+                throw Error("Feil ved henting/sletting av " + latestRef + ": " + err.status)
+              }
+            }
+
+            console.log("lager tagg=" + latestName)
+            await github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/' + latestName,
+              sha: "${{ env.COMMIT_SHA }}"
+            }).then((res) => {
+              console.log("laget tagg=" + latestName)
+            })
