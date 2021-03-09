@@ -11,5 +11,6 @@
     }
   },
   "ytelse": "omsorgspenger",
-  "mottattDato": "15. mars 2020"
+  "mottattDato": "15. mars 2020",
+  "kanMeldeFraOmEndringer": false
 }

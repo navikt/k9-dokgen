@@ -53,6 +53,9 @@
     },
     "delvisMedhold": {
       "type": "boolean"
+    },
+    "kanMeldeFraOmEndringer": {
+      "type": "boolean"
     }
   }
 }
