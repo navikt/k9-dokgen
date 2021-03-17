@@ -7,7 +7,8 @@ on:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
+  IMAGE_BASE_OLD: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
+  IMAGE_BASE: ghcr.io/${{ github.repository }}
   CLUSTER: dev-fss
 
 jobs:
@@ -28,11 +29,16 @@ jobs:
         run: echo "TAG=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
       - name: Lag image-navn
-        run: echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
+        run: |
+          echo "IMAGE_OLD=$IMAGE_BASE_OLD:$TAG" >> $GITHUB_ENV
+          echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
 
       - name: Bygg, tag og push Docker image
         run: |
-          docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest .
+          docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest --tag ${IMAGE_OLD} --tag ${IMAGE_BASE_OLD}:latest .
+
+          docker push ${IMAGE_BASE_OLD}:latest
+          docker push ${IMAGE_OLD}
 
           docker push ${IMAGE_BASE}:latest
           docker push ${IMAGE}

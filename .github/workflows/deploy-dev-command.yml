@@ -4,7 +4,7 @@ on:
     types: [deploy-command]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  IMAGE_BASE: docker.pkg.github.com/${{ github.repository }}/k9-dokgen
+  IMAGE_BASE: ghcr.io/${{ github.repository }}
       
 jobs:
   promote:
