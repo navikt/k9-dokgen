@@ -19,7 +19,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Logger inn i Docker packages
-        run : echo "${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}" | docker login --username "x-access-token" --password-stdin ghcr.io
+        run : |
+          echo  ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
+          echo "${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}" | docker login --username "x-access-token" --password-stdin ghcr.io
 
       - name: Test med up.sh
         run: chmod +x *.sh && ./up.sh
