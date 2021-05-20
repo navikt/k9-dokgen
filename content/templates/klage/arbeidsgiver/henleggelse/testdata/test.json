@@ -1,0 +1,17 @@
+{
+  "felles": {
+    "brevDato": "1. mai 2020",
+    "erVurdertAvNK": false,
+    "mottaker": {
+      "arbeidsgiver": true,
+      "bruker": false,
+      "navn": "Arbeidsgiver AS",
+      "id": "123456789"
+    },
+    "gjelder": {
+      "navn": "Selv Sjeler",
+      "fødselsdato": "30.02.1975"
+    }
+  },
+  "ytelse": "refusjon av omsorgspenger"
+}
