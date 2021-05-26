@@ -20,8 +20,8 @@ jobs:
 
       - name: Logger inn i Docker packages
         run : |
-          echo  ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
-          echo "${{ secrets.GHCR_PUSH_TOKEN }}" | docker login --username "${{ secrets.GHCR_PUSH_USERNAME }}" --password-stdin ghcr.io
+          echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
+          echo ${GITHUB_TOKEN} | docker login --username "x-access-token" --password-stdin ghcr.io
 
       - name: Test med up.sh
         run: chmod +x *.sh && ./up.sh
