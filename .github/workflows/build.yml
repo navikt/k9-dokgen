@@ -21,7 +21,7 @@ jobs:
       - name: Logger inn i Docker packages
         run : |
           echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
-          echo ${GITHUB_TOKEN} | docker login --username "x-access-token" --password-stdin ghcr.io
+          echo ${GITHUB_TOKEN} | docker login -u "x-access-token" --password-stdin ghcr.io
 
       - name: Test med up.sh
         run: chmod +x *.sh && ./up.sh
@@ -36,8 +36,7 @@ jobs:
         run: |
           docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest .
 
-          docker push ${IMAGE_BASE}:latest
-          docker push ${IMAGE}
+          docker push ${IMAGE_BASE} --all-tags
 
       - name: Deploy k9-dokgen-kontrakt artifact
         run: |
