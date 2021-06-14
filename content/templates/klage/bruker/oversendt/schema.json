@@ -55,9 +55,6 @@
           "type": "boolean"
         }
       }
-    },
-    "ytelse": {
-      "type": "string"
     }
   }
 }

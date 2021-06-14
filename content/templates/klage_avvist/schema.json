@@ -11,9 +11,6 @@
     "felles": {
       "type": "object"
     },
-    "ytelse": {
-      "type": "string"
-    },
     "avdeling": {
       "type": "string"
     },

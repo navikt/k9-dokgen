@@ -35,9 +35,7 @@
         }
       }
     },
-    "ytelse": {
-      "type": "string"
-    },
+
     "avdeling": {
       "type": "string"
     },

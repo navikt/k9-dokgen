@@ -46,9 +46,6 @@
           "type": "string"
         }
       }
-    },
-    "ytelse": {
-      "type": "string"
     }
   }
 }
