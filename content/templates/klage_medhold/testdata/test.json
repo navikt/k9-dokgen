@@ -1,5 +1,7 @@
 {
   "felles": {
+    "hovedytelse": "FRISINN",
+    "brevnavn": "inntektkompensasjon for frilans og selvstendig næringsdrivende",
     "mottaker": {
       "arbeidsgiver": false,
       "bruker": true,
