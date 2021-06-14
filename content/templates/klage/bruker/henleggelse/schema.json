@@ -10,7 +10,9 @@
   "properties": {
     "felles": {
       "required": [
-        "brevDato"
+        "brevDato",
+        "brevnavn",
+        "hovedytelse"
       ],
       "properties": {
         "mottaker": {
@@ -33,6 +35,12 @@
               "type": "string"
             }
           }
+        },
+        "brevnavn": {
+          "type": "string"
+        },
+        "hovedytelse": {
+          "type": "string"
         },
         "brevDato": {
           "type": "string"

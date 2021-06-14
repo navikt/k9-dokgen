@@ -13,9 +13,17 @@
       "required": [
         "brevDato",
         "fritekst",
-        "erVurdertAvNK"
+        "erVurdertAvNK",
+        "brevnavn",
+        "hovedytelse"
       ],
       "properties": {
+        "brevnavn": {
+          "type": "string"
+        },
+        "hovedytelse": {
+          "type": "string"
+        },
         "brevDato": {
           "type": "string"
         },
