@@ -1,5 +1,7 @@
 {
   "felles": {
+    "hovedytelse": "OMSORGSPENGER",
+    "brevnavn": "refusjon av omsorgspenger",
     "brevDato": "1. mai 2020",
     "erVurdertAvNK": false,
     "mottaker": {
@@ -13,5 +15,5 @@
       "fødselsdato": "30.02.1975"
     }
   },
-  "ytelse": "refusjon av omsorgspenger"
+
 }

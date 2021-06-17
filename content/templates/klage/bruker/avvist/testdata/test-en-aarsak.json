@@ -1,5 +1,7 @@
 {
   "felles": {
+    "hovedytelse": "OMSORGSPENGER",
+    "brevnavn": "omsorgspenger",
     "brevDato": "1. mai 2020",
     "erVurdertAvNK": false,
     "mottaker": {
@@ -10,7 +12,7 @@
     },
     "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold"
   },
-  "ytelse": "omsorgspenger",
+
   "avdeling": "NAV",
   "flereÅrsaker": false,
   "aarsakKlagetForSent": false,
