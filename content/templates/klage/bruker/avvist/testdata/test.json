@@ -10,7 +10,11 @@
       "navn": "Selv Sjeler",
       "id": "300220 12345"
     },
-    "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold"
+    "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
+    "behandlendeEnhet": {
+      "navn": "NAV Arbeid og ytelser",
+      "tlf": "55 55 33 33"
+    }
   },
 
   "avdeling": "NAV",

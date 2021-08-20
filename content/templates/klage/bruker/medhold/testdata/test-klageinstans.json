@@ -10,6 +10,10 @@
       "bruker": true,
       "navn": "Selv Sjeler",
       "id": "300220 12345"
+    },
+    "behandlendeEnhet": {
+      "navn": "NAV Klageinstans",
+      "tlf": "21 07 17 30"
     }
   },
 

@@ -14,6 +14,10 @@
       "navn": "Silje Søker",
       "id": "300220 12345",
       "fødselsdato": "30.02.20"
+    },
+    "behandlendeEnhet": {
+      "navn": "NAV Arbeid og ytelser",
+      "tlf": "55 55 33 33"
     }
   }
 }
