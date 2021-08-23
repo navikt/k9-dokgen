@@ -3,7 +3,6 @@
     "hovedytelse": "OMSORGSPENGER",
     "brevnavn": "omsorgspenger",
     "brevDato": "1. mai 2020",
-    "erVurdertAvNK": false,
     "mottaker": {
       "arbeidsgiver": false,
       "bruker": true,

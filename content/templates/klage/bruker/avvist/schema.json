@@ -13,9 +13,9 @@
         "mottaker",
         "brevDato",
         "fritekst",
-        "erVurdertAvNK",
         "brevnavn",
-        "hovedytelse"
+        "hovedytelse",
+        "behandlendeEnhet"
       ],
       "properties": {
         "mottaker": {
@@ -51,9 +51,6 @@
         },
         "fritekst": {
           "type": "string"
-        },
-        "erVurdertAvNK": {
-          "type": "boolean"
         }
       }
     },
