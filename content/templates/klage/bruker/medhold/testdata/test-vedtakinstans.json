@@ -17,5 +17,9 @@
   },
 
   "mottattDato": "15. mars 2020",
-  "kanMeldeFraOmEndringer": true
+  "kanMeldeFraOmEndringer": true,
+  "innsynsrett": true,
+  "klagerett": true,
+  "ankerett": false,
+  "forrigeBehandlendeEnhet": null
 }
