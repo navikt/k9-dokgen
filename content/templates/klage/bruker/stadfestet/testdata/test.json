@@ -11,10 +11,15 @@
       "id": "300220 12345"
     },
     "behandlendeEnhet": {
-      "navn": "NAV Arbeid og ytelser",
-      "tlf": "55 55 33 33"
+      "navn": "NAV Klageinstans",
+      "tlf": "21 07 17 30"
     }
   },
 
-  "mottattDato": "15. mars 2020"
+  "mottattDato": "15. mars 2020",
+  "innsynsrett": true,
+  "ankerett": true,
+  "forrigeBehandlendeEnhet": {
+    "navn": "NAV Arbeid og ytelser"
+  }
 }

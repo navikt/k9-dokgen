@@ -2,15 +2,19 @@
 
 ## NAV Klageinstans har avslått klagen din på {{felles/brevnavn}}
 
-Vi er enige i avgjørelsen til NAV Arbeid og ytelser. Derfor har vi ikke endret vedtaket du klaget på.
+Vi er enige i avgjørelsen til {{forrigeBehandlendeEnhet.navn}}. Derfor har vi ikke endret vedtaket du klaget på.
 
 
 ### Dette har vi lagt vekt på i vurderingen vår
 
 {{felles.fritekst}}
 
+{{#if innsynsrett}}
 {{> klage/bruker/felles/innsynsrett }}
+{{/if}}
 
+{{#if ankerett}}
 {{> klage/bruker/felles/ankerett}}
+{{/if}}if}}
 
-{{> klage/bruker/felles/footer klageinstans=true}}
+{{> klage/bruker/felles/footer}}
