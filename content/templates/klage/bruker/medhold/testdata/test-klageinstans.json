@@ -21,7 +21,5 @@
   "innsynsrett": true,
   "klagerett": false,
   "ankerett": true,
-  "forrigeBehandlendeEnhet": {
-    "navn": "NAV Arbeid og ytelser"
-  }
+  "forrigeBehandlendeEnhet": "NAV Arbeid og ytelser"
 }
