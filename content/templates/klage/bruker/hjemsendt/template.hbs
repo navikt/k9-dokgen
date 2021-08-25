@@ -1,10 +1,10 @@
 {{> felles/adressatdetaljer }}
 
-## NAV skal behandle søknaden om {{felles/brevnavn}} på nytt
+## NAV skal behandle {{#if tilbakekrevingYtelse}}vedtaket{{else}}søknaden{{/if}} om {{felles/brevnavn}} på nytt
 
-Vi kan ikke vurdere om du har rett til {{felles/brevnavn}} fordi vi mangler opplysninger.
-{{#if erOpphevet}} Derfor har vi opphevet vedtaket og sendt saken tilbake til NAV Arbeid og ytelser. De skal behandle søknaden på nytt.
-{{else}} Derfor har vi sendt saken tilbake til NAV Arbeid og ytelser. De skal behandle saken på nytt.
+Vi kan ikke vurdere om du har rett til {{#if tilbakekrevingYtelse}}å ikke tilbakebetale {{tilbakekrevingYtelse}}{{else}}{{felles/brevnavn}}{{/if}} fordi vi mangler opplysninger.
+{{#if erOpphevet}} Derfor har vi opphevet vedtaket og sendt saken tilbake til {{forrigeBehandlendeEnhet.navn}}. De skal behandle søknaden på nytt.
+{{else}} Derfor har vi sendt saken tilbake til {{forrigeBehandlendeEnhet.navn}}. De skal behandle saken på nytt.
 {{/if}}
 
 Saksbehandlingstiden er vanligvis 12 uker.
@@ -17,6 +17,6 @@ Saksbehandlingstiden er vanligvis 12 uker.
 
 Du kan ikke klage på denne beslutningen. Dette følger av forvaltningsloven §§ 2 og 28.
 
-Har du nye opplysninger eller ønsker å uttale deg, kan du sende dette via [nav.no/ettersendelser](https://nav.no/ettersendelser) innen 3 uker. Velg NAV-enhet: NAV Klageinstans Nord.
+Har du nye opplysninger eller ønsker å uttale deg, kan du sende dette via [nav.no/ettersendelser](https://nav.no/ettersendelser) innen 3 uker. {{#if ettersendelsesenhet}}Velg NAV-enhet: {{ettersendelsesenhet}}.{{/if}}
 
-{{> klage/bruker/felles/footer klageinstans=true}}
+{{> klage/bruker/felles/footer}}

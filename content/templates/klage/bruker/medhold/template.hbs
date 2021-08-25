@@ -6,8 +6,8 @@
 ## NAV har omgjort vedtaket ditt om {{felles/brevnavn}}
 {{/if}}
 
-{{#if felles.erVurdertAvNK}}
-Etter at du klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket til NAV Arbeid og ytelser gjøres om.
+{{#if forrigeBehandlendeEnhet}}
+Etter at du klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket til {{forrigeBehandlendeEnhet.navn}} gjøres om.
 {{else}}
 Etter at du klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedtaket gjøres om.
 {{/if}}
@@ -21,12 +21,14 @@ Etter at du klaget har vi vurdert saken på nytt. Vi har kommet fram til at vedt
 Dersom det skjer endringer som kan ha betydning for vedtaket, må du straks melde fra til NAV. Du finner mer informasjon på [nav.no/rettogplikt](https://nav.no/rettogplikt).
 {{/if}}
 
-{{> klage/bruker/felles/innsynsrett }}
+{{# if innsynsrett}}
+{{> klage/bruker/felles/innsynsrett}}
+{{/if}}
 
-{{#if felles.erVurdertAvNK}}
+{{#if ankerett}}
 {{> klage/bruker/felles/ankerett}}
-{{else}}
+{{else if klagerett}}
 {{> klage/bruker/felles/klagerett}}
 {{/if}}
 
-{{> klage/bruker/felles/footer klageinstans=felles.erVurdertAvNK}}
+{{> klage/bruker/felles/footer}}

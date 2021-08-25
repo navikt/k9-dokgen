@@ -4,14 +4,22 @@
     "brevnavn": "omsorgspenger",
     "brevDato": "4. oktober 2020",
     "fritekst": "Vi mener at du forklart med denne friteksten har fått medhold",
-    "erVurdertAvNK": false,
     "mottaker": {
       "arbeidsgiver": false,
       "bruker": true,
       "navn": "Selv Sjeler",
       "id": "300220 12345"
+    },
+    "behandlendeEnhet": {
+      "navn": "NAV Klageinstans",
+      "tlf": "21 07 17 30"
     }
   },
 
-  "mottattDato": "15. mars 2020"
+  "mottattDato": "15. mars 2020",
+  "innsynsrett": true,
+  "ankerett": true,
+  "forrigeBehandlendeEnhet": {
+    "navn": "NAV Arbeid og ytelser"
+  }
 }
