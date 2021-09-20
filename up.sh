@@ -16,3 +16,4 @@ until $(docker run --rm --network container:$CONTAINER appropriate/curl --output
     sleep 2
 done
 printf ' done'
+
