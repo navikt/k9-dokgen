@@ -21,5 +21,7 @@
   "innsynsrett": true,
   "klagerett": true,
   "ankerett": false,
-  "forrigeBehandlendeEnhet": null
+  "forrigeBehandlendeEnhet": null,
+  "delvisMedhold": true
+
 }
