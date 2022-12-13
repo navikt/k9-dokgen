@@ -36,7 +36,7 @@ jobs:
 
       - name: Oppdater kommentar med deployment status ved feil
         if: failure()
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GH_EXTENDED_ACCESS_TOKEN}}
           script: |
@@ -48,7 +48,7 @@ jobs:
                                     body: 'promote til ${{ github.event.client_payload.slash_command.args }} feilet'})
       - name: Oppdater kommentar med deployment status
         if: success()
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -65,7 +65,7 @@ jobs:
           echo "COMMIT_SHA=$(git rev-parse ${{ env.TAG }})" >> $GITHUB_ENV
       - name: Tagg prodsatt commit
         if: success() && env.CLUSTER == 'prod-fss'
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
