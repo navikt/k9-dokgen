@@ -62,7 +62,7 @@ jobs:
             </table>
       - name: Trigg deploy til dev-fss
         if: success()
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v2
         with:
           token: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
           issue-number: ${{ steps.createdeployissue.outputs.number }}
