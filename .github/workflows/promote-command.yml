@@ -1,29 +1,53 @@
 name: Promote
 on:
-  repository_dispatch:
-    types: [promote-command]
+  issue_comment:
+    types: [created]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   IMAGE_BASE: ghcr.io/${{ github.repository }}
 
 jobs:
   promote:
+    if: contains(github.event.comment.html_url, '/issues/') && startsWith( github.event.comment.body, '/promote ' )
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Set variabler for image, namespace og cluster
+      - name: Acknowledge command
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.reactions.createForIssueComment({
+              comment_id: context.payload.comment.id,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              content: '+1',
+            });
+      - name: Henter informasjon fra issuet
+        id: issue_comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.get( {
+              owner: context.issue.owner,
+              repo: context.issue.repo,
+              issue_number: context.payload.issue.number })
+            .then(response => {
+              core.setOutput('sha', response.data.body);
+            });
+
+      - name: Set variabler for image og cluster
         shell: bash
         run: |
-          echo "TAG=$(echo ${{ github.event.client_payload.slash_command.arg1 }} | cut -c16-22)" >> $GITHUB_ENV
-          echo "IMAGE=$IMAGE_BASE:${{ github.event.client_payload.slash_command.arg1 }}" >> $GITHUB_ENV
-          echo "CLUSTER=${{ github.event.client_payload.slash_command.arg2 }}" >> $GITHUB_ENV
-          echo "NAMESPACE=${{ github.event.client_payload.slash_command.arg3 }}" >> $GITHUB_ENV
+          echo "TAG=$(echo '${{ github.event.issue.title }}' | awk -F- '{print $NF}')" >> $GITHUB_ENV
+          echo "IMAGE=$IMAGE_BASE:$(echo '${{  github.event.issue.title }}' | awk '{print $NF}')" >> $GITHUB_ENV
+          echo "CLUSTER=$(echo '${{github.event.comment.body}}' | cut -d' ' -f2)" >> $GITHUB_ENV
 
       - name: Sjekk ut kode
-        uses: actions/checkout@v1.2.0
+        uses: actions/checkout@v3
         with:
-          ref: ${{ env.TAG }}
+          ref: ${{ steps.issue_comment.outputs.sha }}
 
       - name: Promoter til cluster og namespace
         uses: nais/deploy/actions/deploy@v1
@@ -36,33 +60,35 @@ jobs:
 
       - name: Oppdater kommentar med deployment status ved feil
         if: failure()
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GH_EXTENDED_ACCESS_TOKEN}}
+          github-token: ${{secrets.GH_ACCESS_TOKEN}}
           script: |
             const issue = { owner: context.issue.owner,
                             repo: context.issue.repo,
-                            issue_number: ${{ github.event.client_payload.github.payload.issue.number }} }
-            github.issues.createComment({...issue,
+                            issue_number: ${{ github.event.issue.number }} }
+            github.rest.issues.createComment({...issue,
                                     title: 'Deploy av ${{ env.TAG }}',
-                                    body: 'promote til ${{ github.event.client_payload.slash_command.args }} feilet'})
+                                    body: 'promote til ${{ env.CLUSTER }} feilet'})
+
+
       - name: Oppdater kommentar med deployment status
         if: success()
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const issue = { owner: context.issue.owner,
                             repo: context.issue.repo,
-                            issue_number: ${{ github.event.client_payload.github.payload.issue.number }} }
-            github.issues.createComment({...issue,
-                                    body: 'promote til ${{ github.event.client_payload.slash_command.args }} utført'})
-            github.issues.addLabels({...issue, labels: ['deployment','${{ env.CLUSTER }}-${{ env.NAMESPACE }}']})
+                            issue_number: ${{ github.event.issue.number }} }
+            github.rest.issues.createComment({...issue,
+                                    body: 'promote til ${{ env.CLUSTER }} utført'})
+            github.rest.issues.addLabels({...issue, labels: ['deployment','${{ env.CLUSTER }}']})
+
       - name: Klargjør for å tagge prodsatt commit
         if: success() && env.CLUSTER == 'prod-fss'
         run: |
           echo "NOW=$(TZ=Europe/Oslo date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
-          echo "COMMIT_SHA=$(git rev-parse ${{ env.TAG }})" >> $GITHUB_ENV
       - name: Tagg prodsatt commit
         if: success() && env.CLUSTER == 'prod-fss'
         uses: actions/github-script@v3
@@ -76,7 +102,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 ref: 'refs/tags/' + tagName,
-                sha: "${{ env.COMMIT_SHA }}"
+                sha: "${{ steps.issue_comment.outputs.sha }}"
             }).then((res) => {
                 console.log("laget tagg=" + tagName)
             })
@@ -113,7 +139,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: 'refs/tags/' + latestName,
-              sha: "${{ env.COMMIT_SHA }}"
+              sha: "${{ steps.issue_comment.outputs.sha }}"
             }).then((res) => {
               console.log("laget tagg=" + latestName)
             })

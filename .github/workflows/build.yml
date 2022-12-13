@@ -27,7 +27,7 @@ jobs:
         run: chmod +x *.sh && ./up.sh
 
       - name: Hent tag
-        run: echo "TAG=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+        run: echo "TAG=$(date +'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
       - name: Lag image-navn
         run: echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
@@ -45,25 +45,63 @@ jobs:
           GITHUB_USERNAME: x-access-token
           GITHUB_PASSWORD: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
 
-      - name: Opprett deployment issue
-        if: success()
-        uses: maxkomarychev/oction-create-issue@v0.7.1
-        id: createdeployissue
+      - name: Lukk gamle issues
+        uses: actions/github-script@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: Bygg av ${{ env.TAG }}
-          labels: deployment
-          body: |
-            Kommenter med <b>/promote ${{ env.TAG }} env namespace</b>, hvor <b>env</b> er et gyldig clusternavn og <b>namespace</b> et eksisterende namespace i det clusteret.
-            <table>
-            <tr><th>Cluster</th><th>Namespace</th></tr>
-            <tr><td>dev-fss</td><td>q1</td></tr>
-            <tr><td>prod-fss</td><td>default</td></tr>
-            </table>
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['deployment']
+            }).then(response => {
+              response.data.forEach(issue => {
+                github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed'
+                });
+              });
+            });
+
+      - name: Opprett deployment issue
+        id: createdeployissue
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.create( {
+              owner: context.issue.owner,
+              repo: context.issue.repo,
+              labels: ['deployment'],
+              body: '${{ github.sha }}',
+              title: 'Deploy av ${{ env.TAG }}'})
+            .then(response => {
+               const issue = { owner: context.issue.owner,
+                             repo: context.issue.repo,
+                             issue_number: response.data.number }
+               github.rest.issues.createComment({
+                 ...issue,
+                 body: 'Kommenter enten "/promote dev-fss" eller "/promote prod-fss"',
+                 title: 'For deploy av ${{ env.TAG }} til miljø'
+               })
+               core.setOutput('number', issue.issue_number);
+            });
+
       - name: Trigg deploy til dev-fss
         if: success()
-        uses: peter-evans/create-or-update-comment@v1
+        uses: actions/github-script@v6
         with:
-          token: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
-          issue-number: ${{ steps.createdeployissue.outputs.number }}
-          body: /promote ${{ env.TAG }} dev-fss q1
+          github-token: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
+          script: |
+            const issue = { owner: context.issue.owner,
+                            repo: context.issue.repo,
+                            issue_number: ${{ steps.createdeployissue.outputs.number }} }
+            github.rest.issues.createComment({
+              ...issue,
+              body: '/promote dev-fss',
+              title: 'Deploy av ${{ env.TAG }} til miljø'
+            })
