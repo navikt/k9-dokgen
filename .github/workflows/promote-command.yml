@@ -91,7 +91,7 @@ jobs:
           echo "NOW=$(TZ=Europe/Oslo date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
       - name: Tagg prodsatt commit
         if: success() && env.CLUSTER == 'prod-fss'
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
