@@ -98,7 +98,7 @@ jobs:
             const latestName = "PROD"
             const tagName = "PROD_${{ env.NOW }}"
             console.log("lager tagg=" + tagName)
-            github.git.createRef({
+            github.rest.git.createRef({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 ref: 'refs/tags/' + tagName,
@@ -110,14 +110,14 @@ jobs:
             const latestRef = 'tags/' + latestName
             console.log("ser om tagg="+ latestRef + " finnes...")
             try {
-              let previous = await github.git.getRef({
+              let previous = await github.rest.git.getRef({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 ref: latestRef,
               })
               console.log(latestRef + " finnes! sletter...")
 
-              let slettet = await github.git.deleteRef({
+              let slettet = await github.rest.git.deleteRef({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 ref: latestRef,
@@ -135,7 +135,7 @@ jobs:
             }
 
             console.log("lager tagg=" + latestName)
-            await github.git.createRef({
+            await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: 'refs/tags/' + latestName,
