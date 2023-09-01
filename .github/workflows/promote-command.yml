@@ -10,7 +10,9 @@ jobs:
   promote:
     if: contains(github.event.comment.html_url, '/issues/') && startsWith( github.event.comment.body, '/promote ' )
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      issues: write
     steps:
 
       - name: Acknowledge command

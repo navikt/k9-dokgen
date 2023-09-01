@@ -13,6 +13,10 @@ env:
 jobs:
   kompiler:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      issues: write
     steps:
 
       - name: Sjekk ut kode
