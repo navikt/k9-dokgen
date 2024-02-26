@@ -1,7 +1,7 @@
 [![](https://github.com/navikt/k9-dokgen/workflows/Verify%20and%20test/badge.svg)](https://github.com/navikt/k9-dokgen/actions?query=workflow%3A%22Verify+and+test%22)
 
 # k9-dokgen
-Brevmaler for team k9saksbehandling.
+Brevmaler for team k9saksbehandling. 
 
 
 ## Importer maler i prosjekt
