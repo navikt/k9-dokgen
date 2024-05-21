@@ -91,11 +91,11 @@ jobs:
             github.rest.issues.addLabels({...issue, labels: ['deployment','${{ env.CLUSTER }}']})
 
       - name: Klargjør for å tagge prodsatt commit
-        if: success() && env.CLUSTER == 'prod-fss'
+        if: success() && env.CLUSTER == 'prod-gcp'
         run: |
           echo "NOW=$(TZ=Europe/Oslo date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
       - name: Tagg prodsatt commit
-        if: success() && env.CLUSTER == 'prod-fss'
+        if: success() && env.CLUSTER == 'prod-gcp'
         uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}

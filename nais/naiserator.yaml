@@ -29,6 +29,12 @@ spec:
       memory: 256Mi
   secureLogs:
     enabled: true
+  accessPolicy:
+    inbound:
+      rules:
+      { { #each accessPoliciesInbound as |inboundRule|}}
+          - {{inboundRule } }
+      {{/each}}
   ingresses:
   {{#each ingresses as |url|}}
      - {{url}}
