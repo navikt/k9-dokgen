@@ -32,8 +32,8 @@ spec:
   accessPolicy:
     inbound:
       rules:
-      { { #each accessPoliciesInbound as |inboundRule|}}
-          - {{inboundRule } }
+      {{ #each accessPoliciesInbound as |inboundRule|}}
+          - {{inboundRule }}
       {{/each}}
   ingresses:
   {{#each ingresses as |url|}}
