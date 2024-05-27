@@ -18,7 +18,7 @@ jobs:
     steps:
 
       - name: Acknowledge command
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.reactions.createForIssueComment({
@@ -29,7 +29,7 @@ jobs:
             });
       - name: Henter informasjon fra issuet
         id: issue_comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -66,7 +66,7 @@ jobs:
 
       - name: Oppdater kommentar med deployment status ved feil
         if: failure()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GH_ACCESS_TOKEN}}
           script: |
@@ -80,7 +80,7 @@ jobs:
 
       - name: Oppdater kommentar med deployment status
         if: success()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -97,7 +97,7 @@ jobs:
           echo "NOW=$(TZ=Europe/Oslo date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
       - name: Tagg prodsatt commit
         if: success() && env.CLUSTER == 'prod-gcp'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
