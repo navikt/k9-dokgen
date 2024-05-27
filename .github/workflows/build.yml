@@ -8,7 +8,6 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   IMAGE_BASE: ghcr.io/${{ github.repository }}
-  CLUSTER: dev-gcp
 
 jobs:
   kompiler:
