@@ -68,7 +68,7 @@ jobs:
         if: failure()
         uses: actions/github-script@v7
         with:
-          github-token: ${{secrets.GH_ACCESS_TOKEN}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const issue = { owner: context.issue.owner,
                             repo: context.issue.repo,
