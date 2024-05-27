@@ -1,0 +1,16 @@
+{
+  "minReplicas": "2",
+  "maxReplicas": "3",
+  "ingresses": [
+    "https://k9-dokgen.intern.nav.no"
+  ],
+  "accessPoliciesInbound": [
+    {
+      "application": "k9-formidling",
+      "cluster": "prod-fss"
+    }
+  ],
+  "env": {
+    "LOADBALANCER_FQDN": "app.adeo.no"
+  }
+}

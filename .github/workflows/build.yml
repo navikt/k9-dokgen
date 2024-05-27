@@ -8,7 +8,6 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   IMAGE_BASE: ghcr.io/${{ github.repository }}
-  CLUSTER: dev-fss
 
 jobs:
   kompiler:
@@ -89,13 +88,13 @@ jobs:
                              issue_number: response.data.number }
                github.rest.issues.createComment({
                  ...issue,
-                 body: 'Kommenter enten "/promote dev-fss" eller "/promote prod-fss"',
+                 body: 'Kommenter enten "/promote dev-gcp" eller "/promote prod-gcp"',
                  title: 'For deploy av ${{ env.TAG }} til miljø'
                })
                core.setOutput('number', issue.issue_number);
             });
 
-      - name: Trigg deploy til dev-fss
+      - name: Trigg deploy til dev-gcp
         if: success()
         uses: actions/github-script@v6
         with:
@@ -106,6 +105,6 @@ jobs:
                             issue_number: ${{ steps.createdeployissue.outputs.number }} }
             github.rest.issues.createComment({
               ...issue,
-              body: '/promote dev-fss',
+              body: '/promote dev-gcp',
               title: 'Deploy av ${{ env.TAG }} til miljø'
             })

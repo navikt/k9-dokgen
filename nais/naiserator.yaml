@@ -29,9 +29,17 @@ spec:
       memory: 256Mi
   secureLogs:
     enabled: true
+  accessPolicy:
+    inbound:
+      rules:
+      {{#each accessPoliciesInbound as |inboundRule|}}
+        - application: {{inboundRule.application}}
+          namespace: k9saksbehandling
+          cluster: {{inboundRule.cluster}}
+      {{/each}}
   ingresses:
   {{#each ingresses as |url|}}
-     - {{url}}
+    - {{url}}
   {{/each}}
   env:
   {{#each env}}

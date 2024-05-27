@@ -13,6 +13,8 @@ jobs:
     permissions:
       contents: write
       issues: write
+      id-token: write
+
     steps:
 
       - name: Acknowledge command
@@ -55,10 +57,9 @@ jobs:
           ref: ${{ steps.issue_comment.outputs.sha }}
 
       - name: Promoter til cluster og namespace
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
           PRINT_PAYLOAD: true
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: ${{ env.CLUSTER }}
           RESOURCE: nais/naiserator.yaml
           VARS: nais/${{ env.CLUSTER }}.json
@@ -91,11 +92,11 @@ jobs:
             github.rest.issues.addLabels({...issue, labels: ['deployment','${{ env.CLUSTER }}']})
 
       - name: Klargjør for å tagge prodsatt commit
-        if: success() && env.CLUSTER == 'prod-fss'
+        if: success() && env.CLUSTER == 'prod-gcp'
         run: |
           echo "NOW=$(TZ=Europe/Oslo date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
       - name: Tagg prodsatt commit
-        if: success() && env.CLUSTER == 'prod-fss'
+        if: success() && env.CLUSTER == 'prod-gcp'
         uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
