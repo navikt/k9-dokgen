@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-docker-compose -p dokgen_dev_interactive up -d --build
+docker compose -p dokgen_dev_interactive up -d --build
 
 export HEALTHCHECK_URL=localhost:8080/actuator/health
 export CONTAINER=dokgen_dev_interactive
