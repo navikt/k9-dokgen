@@ -1,0 +1,81 @@
+name: Build, push and deploy
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    outputs:
+      build-version: ${{ steps.generate-build-version.outputs.build-version }}
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # ratchet:actions/checkout@v4
+        with:
+          fetch-depth: 0 # checkout gir shallow copy - fetch-depth: 0 vil tilgjengeliggjøre tags
+      - name: Login to GitHub Packages Docker Registry
+        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test med up.sh
+        run: chmod +x *.sh && ./up.sh
+      - name: Generate build version
+        id: generate-build-version
+        shell: bash
+        run: echo "build-version=$(date +%Y.%m.%d.%H%M%S)-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+      - name: Bygg og push docker image
+        id: docker-build
+        uses: navikt/sif-gha-workflows/.github/actions/maven/build-push-docker-image@main # ratchet:exclude
+        with:
+          build-version: ${{ steps.generate-build-version.outputs.build-version }}
+          push-image: ${{ github.ref_name == github.event.repository.default_branch }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+      - name: Deploy k9-dokgen-kontrakt artifact
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
+        run: |
+          ./collect-contracts.sh
+          mvn deploy -e --settings ./.m2/settings.xml --file build -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
+        env:
+          GITHUB_USERNAME: x-access-token
+          GITHUB_PASSWORD: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
+
+  deploy-dev:
+    name: Deploy dev
+    permissions:
+      id-token: write
+      contents: write
+    if: github.ref_name == github.event.repository.default_branch
+    needs: [build-app]
+    uses: navikt/sif-gha-workflows/.github/workflows/maven-deploy.yml@main
+    with:
+      gar: true
+      image: ${{ needs.build-app.outputs.build-version }}
+      cluster: dev-gcp
+      naiserator_file: nais/naiserator.yaml
+      input_vars_file: nais/dev-gcp.json
+    secrets: inherit
+
+  deploy-prod:
+    name: Deploy prod
+    permissions:
+      id-token: write
+      contents: write
+    if: github.ref_name == github.event.repository.default_branch
+    needs: [build-app, deploy-dev]
+    uses: navikt/sif-gha-workflows/.github/workflows/maven-deploy.yml@main
+    with:
+      gar: true
+      image: ${{ needs.build-app.outputs.build-version }}
+      cluster: prod-fss
+      naiserator_file: nais/naiserator.yaml
+      input_vars_file: nais/prod-gcp.json
+    secrets: inherit
+
