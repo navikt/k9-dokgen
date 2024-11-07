@@ -9,8 +9,5 @@
       "application": "k9-formidling",
       "cluster": "dev-fss"
     }
-  ],
-  "env": {
-    "LOADBALANCER_FQDN": "app-q1.adeo.no"
-  }
+  ]
 }
