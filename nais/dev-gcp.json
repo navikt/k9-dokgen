@@ -8,6 +8,10 @@
     {
       "application": "k9-formidling",
       "cluster": "dev-fss"
+    },
+    {
+      "application": "k9-inntektsmelding",
+      "cluster": "dev-gcp"
     }
   ]
 }

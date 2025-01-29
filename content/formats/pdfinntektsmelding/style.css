@@ -1,0 +1,126 @@
+/* WARNING: Uses CSS 2.1 */
+
+* {
+    font-family: "Source Sans Pro", sans-serif !important;
+    color: #000000;
+    border-spacing: 0;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    padding:10mm;
+    margin:0;
+    position: relative;
+}
+
+#content {
+    padding-top: 20mm;
+    padding-bottom: 0;
+    margin: 1rem;
+}
+
+#header {
+    margin-bottom: 0;
+}
+
+#footer {
+    position: fixed;
+    margin-right: 5mm;
+    bottom: -19mm;
+    width: 100%;
+    height: 25mm;
+    text-align: right;
+    font-size: 10px;
+}
+
+#nav_logo {
+    width: 30mm;
+    height: 23.1mm;
+    margin: auto;
+    padding: 0 0 10mm 0;
+    position: absolute;
+    right: 10mm;
+}
+
+#pagenumber:before {
+    content: counter(page);
+}
+
+#pagecount:before {
+    content: counter(pages);
+}
+
+.block {
+    width: 100%;
+    margin-top: 0;
+}
+
+.inline {
+    display: inline-block;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 10mm 0 1.5mm 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 10mm 0 1.5mm 0;
+}
+
+h5 {
+    margin-bottom: -2.5mm;
+}
+
+p {
+    font-size: 14px;
+    margin: 3mm 0 2mm 0;
+}
+
+tr {
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+}
+
+.td01 {
+    width: 110px;
+    font-size: 12px;
+}
+
+.td02 {
+    width: 150px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.new_page {
+    page-break-before: always;
+}
+
+li {
+    font-size: 14px;
+}
+
+.draft_text {
+    transform: rotate(45deg);
+    transform-origin: right top;
+    position: absolute;
+    top: 600px;
+    color: #dcdcdc;
+    font-size: 200px;
+    z-index: -1;
+}
