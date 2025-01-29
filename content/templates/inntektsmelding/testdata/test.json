@@ -1,1 +1,41 @@
-{ }
+{
+  "avsenderSystem": "nav.no/arbeidsgiverportalen",
+  "navnSøker": "Gro Gror Testesen",
+  "fornavnSøker": "Gro",
+  "personnummer": "*********5298",
+  "ytelsetype": "PLEIEPENGER_SYKT_BARN",
+  "arbeidsgiverIdent": "*****4556",
+  "arbeidsgiverNavn": "Arbeidsgiver 1",
+  "kontaktperson": {
+    "navn": "Navn kontaktperson",
+    "telefonnummer": "22 22 22 22"
+  },
+  "startDato":"4. juni 2024",
+  "månedInntekt": 56000.50,
+  "opprettetTidspunkt": "31. mai 2024 kl.12.20",
+  "refusjonsendringer": [
+    {
+      "fom": "30. november 2024",
+      "beloep": 45000.00
+    }
+  ],
+  "ingenBortfaltNaturalytelse": false,
+  "ingenGjenopptattNaturalytelse": false,
+  "naturalytelser": [
+    {
+      "fom": "31. mai 2024",
+      "tom": "30. oktober 2024",
+      "naturalytelseType": "Rentefordel lån",
+      "beloep": 5000.00,
+      "erBortfalt": true
+    },
+    {
+      "fom": "31. mai 2024",
+      "tom": "30. oktober 2024",
+      "naturalytelseType": "Bolig",
+      "beloep": 2001.99,
+      "erBortfalt": false
+    }
+  ],
+  "antallRefusjonsperioder": 1
+}
