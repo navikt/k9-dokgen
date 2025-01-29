@@ -1,1 +1,71 @@
-## Her kommer det etterhvert brev om intektsmelding
+<div class="align"> <p> Innsendt: {{opprettetTidspunkt}}</p></div>
+<br>
+<br>
+<br>
+
+# Inntektsmelding {{> k9-inntektsmelding/ytelseNavn}}
+
+**Arbeidsgiver**
+<br>{{arbeidsgiverNavn}}, org.nr. {{arbeidsgiverIdent}}
+
+**Den ansatte**
+<br>{{navnSøker}}, f.nr. {{personnummer}}
+
+**Kontaktperson fra bedriften**
+<br>{{kontaktperson.navn}}, tlf. {{kontaktperson.telefonnummer}}
+
+<hr>
+
+## Første dag med {{> fpinntektsmelding-inntektsmelding/ytelseNavn}}
+{{startDato}}
+
+<hr>
+
+## Beregnet månedslønn
+{{#if endringsarsaker.length}}Endret til: {{thousand-seperator-double månedInntekt}} kr
+<br><br>**Hva er årsaken til endringen?**
+{{~#each endringsarsaker}}
+* <span>{{arsak}}{{#if (and fom tom)}}: {{fom}} - {{tom}} {{else if fom}}: fra og med {{fom}} {{#if bleKjentFra}} , ble kjent fra og med {{bleKjentFra}}{{/if}}{{else}}{{/if}}</span>
+{{/each}}
+{{else}}{{thousand-seperator-double månedInntekt}} kr
+{{/if}}
+
+<hr>
+
+## Utbetaling og refusjon
+**Betaler dere den ansatte lønn under fraværet og krever refusjon**?
+{{~#gt antallRefusjonsperioder 0}}
+{{~#eq antallRefusjonsperioder 1}}
+{{~#each refusjonsendringer}}
+<br>Ja, likt beløp i hele perioden<br><br>**Refusjonsbeløp dere krever per måned**<br>{{thousand-seperator-double beloep}}kr
+{{/each}}
+{{else}}
+<br>Ja, men kun deler av perioden eller varierende beløp<br><br>**Refusjonsbeløp dere krever per måned**
+{{~#each refusjonsendringer}}
+* <span>Fra og med {{fom}}: {{thousand-seperator-double beloep}} kr</span>
+{{/each}}{{/eq}}
+{{else}}
+<br>Nei
+{{/gt}}
+
+<hr>
+
+## Naturalytelser
+**Har den ansatte naturalytelser som faller bort ved fraværet?**
+{{~#if ingenBortfaltNaturalytelse}}<br>Nei{{else}}<br>Ja<br><br>**Naturalytelser som faller bort**
+{{~#each naturalytelser}}
+{{~#if erBortfalt}}
+* <span>{{naturalytelseType}}, verdi {{thousand-seperator-double beloep}} kr: fra og med {{fom}}</span>
+{{/if}}
+{{/each}}
+{{~#eq ingenGjenopptattNaturalytelse false}}
+<br>**Vil den ansatte ha naturalytelser som kommer tilbake i løpet av fraværet?**
+<br>Ja
+<br><br>**Naturalytelser som kommer tilbake**
+{{~#each naturalytelser}}
+{{~#eq erBortfalt false}}
+* <span>{{naturalytelseType}}, verdi {{thousand-seperator-double beloep}} kr: fra og med {{fom}}</span>
+{{/eq}}
+{{/each}}
+{{/eq}}
+{{/if}}

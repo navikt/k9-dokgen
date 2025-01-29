@@ -1,9 +1,151 @@
 {
-  "definitions": {},
+  "$id": "k9-inntektsmelding",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
+  "description": "Dokumentdata for generering av pdf av inntektsmelding",
   "type": "object",
-  "title": "The Root Schema",
+  "required": [
+    "avsenderSystem",
+    "navnSøker",
+    "personnummer",
+    "ytelsetype",
+    "arbeidsgiverIdent",
+    "arbeidsgiverNavn",
+    "startDato",
+    "månedInntekt",
+    "opprettetTidspunkt",
+    "kontaktperson",
+    "antallRefusjonsperioder"
+  ],
+  "$defs": {
+    "refusjonsendringPeriode": {
+      "type": "object",
+      "required": [
+        "fom",
+        "beloep"
+      ],
+      "properties": {
+        "fom": {
+          "type": "string"
+        },
+        "beloep": {
+          "type": "number"
+        }
+      }
+    },
+    "naturalytelse": {
+      "type": "object",
+      "required": [
+        "fom",
+        "naturalytelseType",
+        "beloep",
+        "erBortfalt"
+      ],
+      "properties": {
+        "fom": {
+          "type": "string"
+        },
+        "naturalytelseType": {
+          "type": "string"
+        },
+        "beloep": {
+          "type": "number"
+        },
+        "erBortfalt": {
+          "type": "boolean"
+        }
+      }
+    },
+    "endringsarsak" : {
+      "type": "object",
+      "required": [
+        "arsak"
+      ],
+      "properties": {
+        "arsak": {
+          "type": "string"
+        },
+        "fom": {
+          "type": "string"
+        },
+        "tom": {
+          "type": "string"
+        },
+        "bleKjentFra": {
+          "type": "string"
+        }
+      }
+    }
+  },
   "properties": {
+    "avsenderSystem": {
+      "type": "string"
+    },
+    "navnSøker": {
+      "type": "string"
+    },
+    "personnummer": {
+      "type": "string"
+    },
+    "ytelsetype": {
+      "type": "string",
+      "enum": ["PLEIEPENGER_SYKT_BARN", "PLEIEPENGER_NÆRSTÅENDE", "OPPLÆRINGSPENGER", "OMSORGSPENGER"]
+    },
+    "arbeidsgiverIdent": {
+      "type": "string"
+    },
+    "arbeidsgiverNavn": {
+      "type": "string"
+    },
+    "kontaktperson": {
+      "type": "object",
+      "required": [
+        "navn",
+        "telefonnummer"
+      ],
+      "properties": {
+        "navn": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "string"
+        }
+      }
+    },
+    "startDato": {
+      "type": "string"
+    },
+    "månedInntekt": {
+      "type": "number"
+    },
+    "opprettetTidspunkt": {
+      "type": "string"
+    },
+    "refusjonsendringer": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/refusjonsendringPeriode"
+      }
+    },
+    "ingenBortfaltNaturalytelse": {
+      "type": "boolean"
+    },
+    "ingenGjenopptattNaturalytelse": {
+      "type": "boolean"
+    },
+    "naturalytelser": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/naturalytelse"
+      }
+    },
+    "endringsarsaker": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/endringsarsak"
+      }
+    },
+    "antallRefusjonsperioder": {
+      "type": "number"
+    }
   }
 }
