@@ -1,30 +1,15 @@
 /* WARNING: Uses CSS 2.1 */
-
 * {
     font-family: "Source Sans Pro", sans-serif !important;
     color: #000000;
-    border-spacing: 0;
+    letter-spacing: 0.1px;
+    line-height: 16px;
 }
 
 html {
     height:100%;
 }
 
-body {
-    padding:10mm;
-    margin:0;
-    position: relative;
-}
-
-#content {
-    padding-top: 20mm;
-    padding-bottom: 0;
-    margin: 1rem;
-}
-
-#header {
-    margin-bottom: 0;
-}
 
 #footer {
     position: fixed;
@@ -36,13 +21,11 @@ body {
     font-size: 10px;
 }
 
-#nav_logo {
-    width: 30mm;
-    height: 23.1mm;
-    margin: auto;
-    padding: 0 0 10mm 0;
-    position: absolute;
-    right: 10mm;
+#content {
+    margin-top: 48px;
+    margin-bottom: 74px;
+    margin-left: 64px;
+    margin-right: 64px;
 }
 
 #pagenumber:before {
@@ -53,54 +36,44 @@ body {
     content: counter(pages);
 }
 
-.block {
-    width: 100%;
-    margin-top: 0;
-}
-
-.inline {
-    display: inline-block;
-}
-
 h1 {
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    margin-bottom: 26px;
 }
 
 h2 {
-    font-size: 22px;
-    margin: 10mm 0 1.5mm 0;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: bold;
+    letter-spacing: 0.25px;
 }
 
 h3 {
-    font-size: 18px;
-    margin: 10mm 0 1.5mm 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
 }
 
-h5 {
-    margin-bottom: -2.5mm;
+h4 {
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: bold;
 }
 
 p {
-    font-size: 14px;
-    margin: 3mm 0 2mm 0;
+    font-size: 11px !important;
 }
 
 tr {
-    font-size: 14px;
+    font-size: 11px;
 }
 
 table {
     width: 100%;
-}
-
-.td01 {
-    width: 110px;
-    font-size: 12px;
-}
-
-.td02 {
-    width: 150px;
 }
 
 .bold {
@@ -111,16 +84,40 @@ table {
     page-break-before: always;
 }
 
-li {
-    font-size: 14px;
+ul{
+    margin-left: -30px;
+    content: ". ";
 }
 
-.draft_text {
-    transform: rotate(45deg);
-    transform-origin: right top;
-    position: absolute;
-    top: 600px;
-    color: #dcdcdc;
-    font-size: 200px;
-    z-index: -1;
+li span {
+    font-size: 11px;
+    padding-left:2px;
+}
+
+p + ul {
+    margin-top: -10px;
+}
+
+li{
+    margin-top: -10px;
+    padding: 0;
+    font-size: 5px;
+}
+
+#ny_nav_logo {
+    margin-bottom: 55px;
+    margin-left: 64px;
+}
+
+.align {
+    margin-top: -64px;
+    text-align: right;
+}
+hr{
+    height: 1px;
+    border:0;
+    border-top: 1px solid gray;
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+    padding: 0;
 }
