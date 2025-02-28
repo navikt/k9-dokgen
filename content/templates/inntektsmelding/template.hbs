@@ -72,6 +72,7 @@
 
 
 {{~#if omsorgspenger}}
+{{#with omsorgspenger}}
 ## Omsorgspenger
 **Har arbeidsgiver utbetalt pliktige dager?**
 {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
@@ -87,4 +88,5 @@
 * <span>Dato: {{dato}}. Timer: {{timer}}</span>
 {{/each}}
 {{/if}}
+{{/with}}
 {{/if}}
