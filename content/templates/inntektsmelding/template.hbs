@@ -69,3 +69,24 @@
 {{/each}}
 {{/eq}}
 {{/if}}
+
+
+{{~#if omsorgspenger}}
+    ## Omsorgspenger
+    **Har arbeidsgiver utbetalt pliktige dager?**
+    {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
+
+    {{~#if fraværsPerioder.length}}
+        <br><br>**Fraværsperioder**
+        {{~#each fraværsPerioder}}
+            * <span>{{fom}} - {{tom}}</span>
+        {{/each}}
+    {{/if}}
+
+    {{~#if delvisFraværsPerioder.length}}
+        <br><br>**Delvis fraværsperioder**
+        {{~#each delvisFraværsPerioder}}
+            * <span>Dato: {{dato}}. Timer: {{timer}}</span>
+        {{/each}}
+    {{/if}}
+{{/if}}
