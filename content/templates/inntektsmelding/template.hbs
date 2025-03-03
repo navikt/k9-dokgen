@@ -73,19 +73,20 @@
 
 {{~#if omsorgspenger}}
 {{#with omsorgspenger}}
+<hr>
 ## Omsorgspenger
-**Har arbeidsgiver utbetalt pliktige dager?**
+**Har dere dekket de 10 første omsorgsdagene i år??**
 {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
 {{~#if fraværsPerioder.length}}
-<br><br>**Fraværsperioder**
+<br>**Dager med fravær hele dagen**
 {{~#each fraværsPerioder}}
 * <span>{{fom}} - {{tom}}</span>
 {{/each}}
 {{/if}}
 {{~#if delvisFraværsPerioder.length}}
-<br><br>**Delvis fraværsperioder**
+**Dager med fravær bare deler av dagen**
 {{~#each delvisFraværsPerioder}}
-* <span>Dato: {{dato}}. Timer: {{timer}}</span>
+* <span>{{dato}}, {{timer}} timer</span>
 {{/each}}
 {{/if}}
 {{/with}}
