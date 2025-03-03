@@ -74,11 +74,12 @@
 {{~#if omsorgspenger}}
 {{#with omsorgspenger}}
 <hr>
+
 ## Omsorgspenger
 **Har dere dekket de 10 første omsorgsdagene i år??**
 {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
 {{~#if fraværsPerioder.length}}
-<br>**Dager med fravær hele dagen**
+<br><br>**Dager med fravær hele dagen**
 {{~#each fraværsPerioder}}
 * <span>{{fom}} - {{tom}}</span>
 {{/each}}
