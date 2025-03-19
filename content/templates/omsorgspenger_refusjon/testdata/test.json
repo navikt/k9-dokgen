@@ -1,0 +1,30 @@
+{
+  "avsenderSystem": "nav.no/arbeidsgiverportalen",
+  "navnSøker": "Gro Gror Testesen",
+  "fornavnSøker": "Gro",
+  "personnummer": "*********5298",
+  "arbeidsgiverIdent": "*****4556",
+  "arbeidsgiverNavn": "Arbeidsgiver 1",
+  "kontaktperson": {
+    "navn": "Navn kontaktperson",
+    "telefonnummer": "22 22 22 22"
+  },
+  "månedInntekt": 56000.50,
+  "opprettetTidspunkt": "31. mai 2024 kl.12.20",
+  "omsorgspenger": {
+    "harUtbetaltPliktigeDager": true,
+    "fraværsPerioder": [
+      {
+        "fom": "2024-05-31",
+        "tom": "2024-06-30"
+      }
+    ],
+    "delvisFraværsPerioder": [
+      {
+        "dato": "2024-06-01",
+        "timer": 4
+      }
+    ]
+  },
+  "årForRefusjon": 2024
+}
