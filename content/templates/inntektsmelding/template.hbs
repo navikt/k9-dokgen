@@ -69,26 +69,3 @@
 {{/each}}
 {{/eq}}
 {{/if}}
-
-
-{{~#if omsorgspenger}}
-{{#with omsorgspenger}}
-<hr>
-
-## Omsorgspenger
-**Har dere dekket de 10 første omsorgsdagene i år??**
-{{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
-{{~#if fraværsPerioder.length}}
-<br><br>**Dager med fravær hele dagen**
-{{~#each fraværsPerioder}}
-* <span>{{fom}} - {{tom}}</span>
-{{/each}}
-{{/if}}
-{{~#if delvisFraværsPerioder.length}}
-**Dager med fravær bare deler av dagen**
-{{~#each delvisFraværsPerioder}}
-* <span>{{dato}}, {{timer}} timer</span>
-{{/each}}
-{{/if}}
-{{/with}}
-{{/if}}

@@ -74,36 +74,6 @@
           "type": "string"
         }
       }
-    },
-    "fraværsPeriode": {
-      "type": "object",
-      "properties": {
-        "fom": {
-          "type": "string"
-        },
-        "tom": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "fom",
-        "tom"
-      ]
-    },
-    "delvisFraværsPeriode": {
-      "type": "object",
-      "properties": {
-        "dato": {
-          "type": "string"
-        },
-        "timer": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "dato",
-        "timer"
-      ]
     }
   },
   "properties": {
@@ -176,29 +146,6 @@
     },
     "antallRefusjonsperioder": {
       "type": "number"
-    },
-    "omsorgspenger": {
-      "type": "object",
-      "properties": {
-        "harUtbetaltPliktigeDager": {
-          "type": "boolean"
-        },
-        "fraværsPerioder": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/fraværsPeriode"
-          }
-        },
-        "delvisFraværsPerioder": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/delvisFraværsPeriode"
-          }
-        }
-      },
-      "required": [
-        "harUtbetaltPliktigeDager"
-      ]
     }
   }
 }
