@@ -7,10 +7,10 @@
 
 ## Om refusjon
 **Utbetaler dere lønn under fraværet, og krever refusjon?**
-Ja
+<br>Ja
 
 **Hvilket år søker dere refusjon for?**
-{{årForRefusjon}}
+<br>{{årForRefusjon}}
 
 <hr>
 
@@ -27,31 +27,31 @@ Ja
 
 <hr>
 
-## Omsorgspenger
 {{#with omsorgspenger}}
-    **Har dere dekket de 10 første omsorgsdagene i år??**
-    {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
-    {{~#if fraværsPerioder.length}}
-        <br><br>**Dager med fravær hele dagen**
-        {{~#each fraværsPerioder}}
-            * <span>{{fom}} - {{tom}}</span>
-        {{/each}}
-    {{/if}}
-    {{~#if delvisFraværsPerioder.length}}
-        **Dager med fravær bare deler av dagen**
-        {{~#each delvisFraværsPerioder}}
-            * <span>{{dato}}, {{timer}} timer</span>
-        {{/each}}
-    {{/if}}
+## Omsorgspenger
+**Har dere dekket de 10 første omsorgsdagene i år??**
+{{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
+{{~#if fraværsPerioder.length}}
+<br><br>**Dager med fravær hele dagen**
+{{~#each fraværsPerioder}}
+* <span>{{fom}} - {{tom}}</span>
+{{/each}}
+{{/if}}
+{{~#if delvisFraværsPerioder.length}}
+**Dager med fravær bare deler av dagen**
+{{~#each delvisFraværsPerioder}}
+* <span>{{dato}}, {{timer}} timer</span>
+{{/each}}
+{{/if}}
 {{/with}}
 
 <hr>
 
 ## Beregnet månedslønn og refusjonskrav
 **Beregnet månedslønn og refusjonskrav**
-{{thousand-seperator-double månedInntekt}} kr
+<br>{{thousand-seperator-double månedInntekt}} kr
 {{#if endringsarsaker.length}}
-<br><br>**Årsaker til endring av inntekt**
+<br>**Årsaker til endring av inntekt**
 {{~#each endringsarsaker}}
 * <span>{{arsak}}{{#if (and fom tom)}}: {{fom}} - {{tom}} {{else if fom}}: fra og med {{fom}} {{#if bleKjentFra}} , ble kjent fra og med {{bleKjentFra}}{{/if}}{{else}}{{/if}}</span>
 {{/each}}
