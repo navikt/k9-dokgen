@@ -29,7 +29,7 @@
 
 {{#with omsorgspenger}}
 ## Omsorgspenger
-**Har dere dekket de 10 første omsorgsdagene i år??**
+**Har dere dekket de 10 første omsorgsdagene i år?**
 {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
 {{~#if fraværsPerioder.length}}
 <br><br>**Dager med fravær hele dagen**
@@ -51,7 +51,7 @@
 **Beregnet månedslønn og refusjonskrav**
 <br>{{thousand-seperator-double månedInntekt}} kr
 {{#if endringsarsaker.length}}
-<br>**Årsaker til endring av inntekt**
+**Årsaker til endring av inntekt**
 {{~#each endringsarsaker}}
 * <span>{{arsak}}{{#if (and fom tom)}}: {{fom}} - {{tom}} {{else if fom}}: fra og med {{fom}} {{#if bleKjentFra}} , ble kjent fra og med {{bleKjentFra}}{{/if}}{{else}}{{/if}}</span>
 {{/each}}
