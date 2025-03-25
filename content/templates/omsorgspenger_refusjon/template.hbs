@@ -31,14 +31,15 @@
 ## Omsorgspenger
 **Har dere dekket de 10 første omsorgsdagene i år?**
 {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
+<br><br>
 {{~#if fraværsPerioder.length}}
-<br><br>**Dager med fravær hele dagen**
+**Dager med fravær hele dagen**
 {{~#each fraværsPerioder}}
 * <span>{{fom}} - {{tom}}</span>
 {{/each}}
 {{/if}}
 {{~#if delvisFraværsPerioder.length}}
-<p>**Dager med fravær bare deler av dagen**</p>
+**Dager med fravær bare deler av dagen**
 {{~#each delvisFraværsPerioder}}
 * <span>{{dato}}, {{timer}} timer</span>
 {{/each}}
