@@ -27,6 +27,10 @@ spec:
     requests:
       cpu: 200m
       memory: 256Mi
+  observability:
+    autoInstrumentation:
+      enabled: true
+      runtime: java
   secureLogs:
     enabled: true
   accessPolicy:
