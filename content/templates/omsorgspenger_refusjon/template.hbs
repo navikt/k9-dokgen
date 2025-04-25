@@ -37,11 +37,21 @@
 {{~#each fraværsPerioder}}
 * <span>{{fom}} - {{tom}}</span>
 {{/each}}
+{{else}}
+Ingen dager med fravær bare deler av dagen
 {{/if}}
 {{~#if delvisFraværsPerioder.length}}
 **Dager med fravær bare deler av dagen**
 {{~#each delvisFraværsPerioder}}
 * <span>{{dato}}, {{timer}} timer</span>
+{{/each}}
+{{else}}
+Ingen dager med fravær bare deler av dagen
+{{/if}}
+{{~#if trukketFraværsPerioder.length}}
+**Dager som skal trekkes**
+{{~#each trukketFraværsPerioder}}
+* <span>{{dato}}</span>
 {{/each}}
 {{/if}}
 {{/with}}
