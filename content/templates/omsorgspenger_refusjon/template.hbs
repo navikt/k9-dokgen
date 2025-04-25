@@ -32,16 +32,16 @@
 **Har dere dekket de 10 første omsorgsdagene i år?**
 {{~#if harUtbetaltPliktigeDager}}<br>Ja{{else}}<br>Nei{{/if}}
 <br><br>
-{{~#if fraværsPerioder.length}}
 **Dager med fravær hele dagen**
+{{~#if fraværsPerioder.length}}
 {{~#each fraværsPerioder}}
 * <span>{{fom}} - {{tom}}</span>
 {{/each}}
 {{else}}
 Ingen dager med fravær bare deler av dagen
 {{/if}}
-{{~#if delvisFraværsPerioder.length}}
 **Dager med fravær bare deler av dagen**
+{{~#if delvisFraværsPerioder.length}}
 {{~#each delvisFraværsPerioder}}
 * <span>{{dato}}, {{timer}} timer</span>
 {{/each}}
