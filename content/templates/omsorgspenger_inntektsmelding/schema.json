@@ -1,0 +1,108 @@
+{
+  "$id": "k9-inntektsmelding",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Dokumentdata for generering av pdf av inntektsmelding",
+  "type": "object",
+  "required": [
+    "avsenderSystem",
+    "navnSøker",
+    "personnummer",
+    "arbeidsgiverIdent",
+    "arbeidsgiverNavn",
+    "månedInntekt",
+    "opprettetTidspunkt",
+    "kontaktperson",
+    "fraværsperioder",
+    "harUtbetaltLønn"
+  ],
+  "$defs": {
+    "endringsarsak" : {
+      "type": "object",
+      "required": [
+        "arsak"
+      ],
+      "properties": {
+        "arsak": {
+          "type": "string"
+        },
+        "fom": {
+          "type": "string"
+        },
+        "tom": {
+          "type": "string"
+        },
+        "bleKjentFra": {
+          "type": "string"
+        }
+      }
+    },
+    "fraværsPeriode": {
+      "type": "object",
+      "properties": {
+        "fom": {
+          "type": "string"
+        },
+        "tom": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fom",
+        "tom"
+      ]
+    }
+  },
+  "properties": {
+    "avsenderSystem": {
+      "type": "string"
+    },
+    "navnSøker": {
+      "type": "string"
+    },
+    "personnummer": {
+      "type": "string"
+    },
+    "arbeidsgiverIdent": {
+      "type": "string"
+    },
+    "arbeidsgiverNavn": {
+      "type": "string"
+    },
+    "kontaktperson": {
+      "type": "object",
+      "required": [
+        "navn",
+        "telefonnummer"
+      ],
+      "properties": {
+        "navn": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "string"
+        }
+      }
+    },
+    "månedInntekt": {
+      "type": "number"
+    },
+    "opprettetTidspunkt": {
+      "type": "string"
+    },
+    "endringsarsaker": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/endringsarsak"
+      }
+    },
+    "fraværsPerioder": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fraværsPeriode"
+      }
+    },
+    "årForRefusjon": {
+      "type": "number"
+    }
+  }
+}
