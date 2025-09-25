@@ -37,8 +37,8 @@ jobs:
         with:
           build-version: ${{ steps.generate-build-version.outputs.build-version }}
           push-image: ${{ github.ref_name == github.event.repository.default_branch }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          upload-image: ${{ github.ref_name != github.event.repository.default_branch }}
+          docker_platforms: ${{ (github.ref_name != github.event.repository.default_branch && 'linux/amd64') || null }} # docker image tarball støtter bare én platform av gangen
       - name: Deploy k9-dokgen-kontrakt artifact
         if: ${{ github.ref_name == github.event.repository.default_branch }}
         run: |
