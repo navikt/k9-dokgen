@@ -1,0 +1,46 @@
+<div class="align"> <p> Innsendt: {{opprettetTidspunkt}}</p></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Refusjon for nyansatt med {{> inntektsmelding/ytelseNavn}}
+
+**Arbeidsgiver**
+<br>{{arbeidsgiverNavn}}, org.nr. {{arbeidsgiverIdent}}
+
+**Den ansatte**
+<br>{{navnSøker}}, f.nr. {{personnummer}}
+
+**Kontaktperson fra bedriften**
+<br>{{kontaktperson.navn}}, tlf. {{kontaktperson.telefonnummer}}
+
+<hr>
+
+## Første dag med refusjon
+{{startDato}}
+
+<hr>
+
+## Refusjon i perioden
+**Betaler dere den ansatte lønn under fraværet og krever refusjon**?
+{{~#gt antallRefusjonsperioder 0}}
+{{~#eq antallRefusjonsperioder 1}}
+{{~#each refusjonsendringer}}
+<br>Ja, likt beløp i hele perioden
+<br><br>**Refusjonsbeløp dere krever per måned**
+<br>{{thousand-seperator-double beloep}} kr
+{{/each}}
+{{else}}
+<br>Ja, men kun deler av perioden eller varierende beløp
+<br><br>**Refusjonsbeløp dere krever per måned**
+{{~#each refusjonsendringer}}
+* <span>Fra og med {{fom}}: {{thousand-seperator-double beloep}} kr</span>
+{{/each}}{{/eq}}
+{{else}}
+<br>Nei
+{{/gt}}
+
+
+
