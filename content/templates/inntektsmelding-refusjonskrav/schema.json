@@ -1,0 +1,86 @@
+{
+  "$id": "fpinntektsmelding-refusjonskrav",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Dokumentdata for generering av pdf av refusjonskrav nyansatt",
+  "type": "object",
+  "required": [
+    "avsenderSystem",
+    "navnSøker",
+    "personnummer",
+    "ytelsetype",
+    "arbeidsgiverIdent",
+    "arbeidsgiverNavn",
+    "startDato",
+    "opprettetTidspunkt",
+    "kontaktperson",
+    "antallRefusjonsperioder"
+  ],
+  "$defs": {
+    "refusjonsendringPeriode": {
+      "type": "object",
+      "required": [
+        "fom",
+        "beloep"
+      ],
+      "properties": {
+        "fom": {
+          "type": "string"
+        },
+        "beloep": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "properties": {
+    "avsenderSystem": {
+      "type": "string"
+    },
+    "navnSøker": {
+      "type": "string"
+    },
+    "personnummer": {
+      "type": "string"
+    },
+    "ytelsetype": {
+      "type": "string",
+      "enum": ["PLEIEPENGER_SYKT_BARN", "PLEIEPENGER_NÆRSTÅENDE", "OPPLÆRINGSPENGER", "OMSORGSPENGER"]
+    },
+    "arbeidsgiverIdent": {
+      "type": "string"
+    },
+    "arbeidsgiverNavn": {
+      "type": "string"
+    },
+    "kontaktperson": {
+      "type": "object",
+      "required": [
+        "navn",
+        "telefonnummer"
+      ],
+      "properties": {
+        "navn": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "string"
+        }
+      }
+    },
+    "startDato": {
+      "type": "string"
+    },
+    "opprettetTidspunkt": {
+      "type": "string"
+    },
+    "refusjonsendringer": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/refusjonsendringPeriode"
+      }
+    },
+    "antallRefusjonsperioder": {
+      "type": "number"
+    }
+  }
+}
