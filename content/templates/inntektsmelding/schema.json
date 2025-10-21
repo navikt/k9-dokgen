@@ -88,7 +88,7 @@
     },
     "ytelsetype": {
       "type": "string",
-      "enum": ["PLEIEPENGER_SYKT_BARN", "PLEIEPENGER_NÆRSTÅENDE", "OPPLÆRINGSPENGER", "OMSORGSPENGER"]
+      "enum": ["PLEIEPENGER_SYKT_BARN", "PLEIEPENGER_NÆRSTÅENDE", "PLEIEPENGER_I_LIVETS_SLUTTFASE", "OPPLÆRINGSPENGER", "OMSORGSPENGER"]
     },
     "arbeidsgiverIdent": {
       "type": "string"
