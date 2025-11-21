@@ -1,3 +1,3 @@
-FROM ghcr.io/navikt/dokgen/dokgen:b9554a157d71aa03da942730feef2ff006f1d114
+FROM ghcr.io/navikt/dokgen/dokgen:20251121-150200
 LABEL org.opencontainers.image.source=https://github.com/navikt/k9-dokgen
 COPY content content
