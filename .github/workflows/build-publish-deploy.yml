@@ -40,14 +40,15 @@ jobs:
           push-image: ${{ github.ref_name == github.event.repository.default_branch }}
           upload-image: ${{ github.ref_name != github.event.repository.default_branch }}
           docker_platforms: ${{ (github.ref_name != github.event.repository.default_branch && 'linux/amd64') || null }} # docker image tarball støtter bare én platform av gangen
-      - name: Deploy k9-dokgen-kontrakt artifact
-        if: ${{ github.ref_name == github.event.repository.default_branch }}
-        run: |
-          ./collect-contracts.sh
-          mvn deploy -e --settings ./.m2/settings.xml --file build -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
-        env:
-          GITHUB_USERNAME: x-access-token
-          GITHUB_PASSWORD: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
+#
+#      - name: Deploy k9-dokgen-kontrakt artifact
+#        if: ${{ github.ref_name == github.event.repository.default_branch }}
+#        run: |
+#          ./collect-contracts.sh
+#          mvn deploy -e --settings ./.m2/settings.xml --file build -Dsha1=-$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)
+#        env:
+#          GITHUB_USERNAME: x-access-token
+#          GITHUB_PASSWORD: ${{ secrets.GH_EXTENDED_ACCESS_TOKEN }}
 
   verdikjede-tester:
     name: Verdikjedetester
