@@ -99,3 +99,9 @@ jobs:
       input_vars_file: nais/prod-gcp.json
     secrets: inherit
 
+
+  sif-code-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: navikt/sif-gha-workflows/.github/actions/sif-code-scan@main
